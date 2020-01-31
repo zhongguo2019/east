@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.slsint.workfile.vo.WorkDirectData"
+        table="info_workdirect"
+    >
+
+        <id
+            name="pkId"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">info_workdirect_pkid_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-WorkDirectData.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="content"
+            type="org.springframework.orm.hibernate3.support.ClobStringType"
+            update="true"
+            insert="true"
+            column="content"
+        />
+
+        <property
+            name="delDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="del_date"
+        />
+
+        <property
+            name="delOper"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="del_oper"
+        />
+
+        <property
+            name="delOperName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="del_opername"
+        />
+
+        <property
+            name="departId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="depart_id"
+        />
+
+        <property
+            name="departName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="depart_name"
+        />
+
+        <property
+            name="fileSourceId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="file_source_id"
+        />
+
+        <property
+            name="fileSourceName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="file_source_name"
+        />
+
+        <property
+            name="issDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="iss_date"
+        />
+
+        <property
+            name="issOper"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="iss_oper"
+        />
+
+        <property
+            name="kindId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="kind_id"
+        />
+
+        <property
+            name="operName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="oper_name"
+        />
+
+        <property
+            name="organId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="organ_id"
+        />
+
+        <property
+            name="organName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="organ_name"
+        />
+
+        <property
+            name="showOrder"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="show_order"
+        />
+
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="title"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="title"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-WorkDirectData.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

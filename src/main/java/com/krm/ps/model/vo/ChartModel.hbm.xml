@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.vo.ChartModel"
+        table="chart_model"
+    >
+
+        <id
+            name="chartID"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">chart_model_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-ChartModel.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="reportID"
+            type="int"
+            update="true"
+            insert="true"
+            column="report_id"
+        />
+
+        <property
+            name="chartType"
+            type="short"
+            update="true"
+            insert="true"
+            column="ch_type"
+        />
+
+        <property
+            name="chartName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ch_name"
+        />
+
+        <property
+            name="chartOrientation"
+            type="short"
+            update="true"
+            insert="true"
+            column="ch_orientation"
+        />
+
+        <property
+            name="catBegin"
+            type="short"
+            update="true"
+            insert="true"
+            column="cat_begin"
+        />
+
+        <property
+            name="catCount"
+            type="short"
+            update="true"
+            insert="true"
+            column="cat_count"
+        />
+
+        <property
+            name="catIndex"
+            type="short"
+            update="true"
+            insert="true"
+            column="cat_index"
+        />
+
+        <property
+            name="seriBegin"
+            type="short"
+            update="true"
+            insert="true"
+            column="ser_begin"
+        />
+
+        <property
+            name="seriCount"
+            type="short"
+            update="true"
+            insert="true"
+            column="ser_count"
+        />
+
+        <property
+            name="seriIndex"
+            type="short"
+            update="true"
+            insert="true"
+            column="ser_index"
+        />
+
+        <property
+            name="chartTitle"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ch_title"
+        />
+
+        <property
+            name="chartTitleX"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ch_x_title"
+        />
+
+        <property
+            name="chartTitleY"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ch_y_title"
+        />
+
+        <property
+            name="chartLegend"
+            type="short"
+            update="true"
+            insert="true"
+            column="ch_legend"
+        />
+
+        <property
+            name="chartTable"
+            type="short"
+            update="true"
+            insert="true"
+            column="ch_table"
+        />
+
+        <property
+            name="chartLabel"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ch_label"
+        />
+
+        <property
+            name="chartGrid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ch_grid"
+        />
+
+        <property
+            name="chartEnabled"
+            type="short"
+            update="true"
+            insert="true"
+            column="ch_enabled"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ChartModel.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

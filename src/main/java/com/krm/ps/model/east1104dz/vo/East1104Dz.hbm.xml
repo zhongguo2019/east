@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.krm.ps.model.east1104dz.vo.East1104Dz" table="EAST_YWZB_DZ">
+
+		<id name="pkid" column="pkid" type="java.lang.Long">
+		</id>
+
+		<property name="organid" type="java.lang.String" update="true"
+			insert="true" column="ORGAN_ID" />
+		<property name="repdate" type="java.lang.String" update="true"
+			insert="true" column="REPORT_DATE" />
+		<property name="zb" type="java.lang.String" update="true"
+			insert="true" column="ZB" />
+		<property name="eastzz" type="java.lang.String" update="true"
+			insert="true" column="EAST_ZZ" />
+		<property name="ywzkbzz" type="java.lang.String" update="true"
+			insert="true" column="YWZKB_ZZ" />
+		<property name="ce" type="java.lang.String" update="true"
+			insert="true" column="CE" />
+		<property name="cjrq" type="java.lang.String" update="true"
+			insert="true" column="CJRQ" />
+
+	</class>
+
+</hibernate-mapping>

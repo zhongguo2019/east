@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.vo.RepFlRepFiled"
+        table="DSP_FL_REP_FILED"
+    >
+
+       <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">DSP_FL_FLATTBUTTE_SEQ</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Dictionary.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="repflid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="repflid"
+        />
+
+        <property
+            name="repid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="repid"
+        />
+        
+        
+
+        <property
+            name="replable"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="replable"
+        />
+
+       
+        <property
+            name="hvattr"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="hvattr"
+        />
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="status"
+        />
+        
+        <property
+            name="hvfiled"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="hvfiled"
+        />
+       <property
+            name="repdesc"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="repdesc"
+        />
+       <property
+            name="reporder"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="reporder"
+        />
+       <property
+            name="datetype"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="datetype"
+        />
+       <property
+            name="isloop"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="isloop"
+        />
+              <property
+            name="looplab"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="looplab"
+        />
+       <property
+            name="attribute"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ATTRIBUTE"
+        />
+        <property
+            name="outrule"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="OUTRULE"
+        />
+        <property
+            name="rulesize"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="RULESIZE"
+        />
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+    </class>
+
+</hibernate-mapping>

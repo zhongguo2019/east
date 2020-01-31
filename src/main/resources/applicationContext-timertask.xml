@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="makeDataTask"
+		class="com.krm.slsint.timetask.MakeDataTask"></bean>
+
+	<bean id="scheduledTask"
+		class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="timerTask">
+			<ref bean="makeDataTask" />
+		</property>
+		<property name="period">
+			<value>10000</value>
+		</property>
+		<property name="delay">
+			<value>1000</value>
+		</property>
+	</bean>
+	<bean id="timerBean"
+		class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+				<ref bean="scheduledTask" />
+			</list>
+		</property>
+	</bean>
+
+	<bean name="ExcelMonitorJob"
+		class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.krm.slsint.importexport.excel.auto.task.ExcelMonitorJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="timeout">
+					<value>5</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="cronTriggerCA"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="ExcelMonitorJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 30 14 * * ?</value>
+		</property>
+	</bean>
+	<!-- 核实验证
+	<bean name="AllPeridenInfoServiceImpl"
+		class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.krm.slsint.mqcheck.service.impl.AllPeridenInfoServiceImpl</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="timeout">
+					<value>5</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="AllPeridenInfo"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="AllPeridenInfoServiceImpl" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0/1 10-23 * * ?</value>
+		</property>
+	</bean>
+	-->
+	<!-- 加载定时任务
+	<bean id="scheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="cronTriggerCA" />
+			</list>
+		</property>
+	</bean>
+	-->
+
+	<!-- report timing lock config -->
+	<bean name="reportLockJob"
+		class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.krm.slsint.timetask.ReportLockJob</value>
+		</property>
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="timeout">
+					<value>5</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="reportLickTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="reportLockJob" />
+		</property>
+		<property name="cronExpression">
+			<value>0 15 10 * * ?</value>
+		</property>
+	</bean>
+	
+	<bean id="scheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!--  
+				<ref local="cronTriggerCA" />
+				<ref local="reportLickTrigger" />
+				-->
+			</list>
+		</property>
+	</bean>
+
+	<!-- 定时迁移补录数据 调用的类ReportMoveVerifyServiceImpl 
+	<bean id="MoveJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="reportMoveVerifyService" />
+		<property name="targetMethod" value="reportMove" />
+		<property name="concurrent" value="false" />
+	</bean>
+	-->
+	
+	<!-- 定时迁移补录数据 触发时间 
+	<bean id="doTime1"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="MoveJobDetail" />
+		<property name="cronExpression">
+			<value>0 0 10-23 2 * ?</value>
+		</property>
+	</bean>
+	-->
+
+	<!-- 定时迁移补录数据 调用的类ReportMoveVerifyServiceImpl
+	<bean id="VerifyJobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="reportMoveVerifyService" />
+		<property name="targetMethod" value="reportVerify" /> 
+		<property name="concurrent" value="false" />
+	</bean>
+	-->
+	 
+	<!-- 定时校验补录数据 触发时间
+	<bean id="doTime2"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="VerifyJobDetail" />
+		<property name="cronExpression">
+			<value> 0 0/30 * * * ?</value>
+		</property>
+	</bean>
+	<bean id="schedulerFactory"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="doTime1" />
+				<ref local="doTime2"/>
+			</list>
+		</property>
+	</bean>
+	-->
+</beans>

@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- on spring context starting up, frech the application context -->
+	<bean id="beansUtil" class="com.krm.ps.util.BeansUtil"></bean>
+	<!-- Transaction template for Managers, from: http://blog.exis.com/colin/archives/2004/07/31/concise-transaction-definitions-spring-11/ -->
+	<bean id="txProxyTemplate" abstract="true"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="dataCollect">PROPAGATION_REQUIRED</prop>
+				<prop key="getData*">PROPAGATION_REQUIRED</prop>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="sort*">PROPAGATION_REQUIRED</prop>
+				<prop key="del*">PROPAGATION_REQUIRED</prop>
+				<prop key="set*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="receiv*">PROPAGATION_REQUIRED</prop>
+				<prop key="remove*">PROPAGATION_REQUIRED</prop>
+				<prop key="forward*">PROPAGATION_REQUIRED</prop>
+				<prop key="reject*">PROPAGATION_REQUIRED</prop>
+				<prop key="recover*">PROPAGATION_REQUIRED</prop>
+				<prop key="recycle*">PROPAGATION_REQUIRED</prop>
+				<prop key="freeze*">PROPAGATION_REQUIRED</prop>
+				<prop key="transfer*">PROPAGATION_REQUIRED</prop>
+				<prop key="change*">PROPAGATION_REQUIRED</prop>
+				<prop key="build*">PROPAGATION_REQUIRED</prop>
+				<prop key="insert*">PROPAGATION_REQUIRED</prop>
+				<prop key="*WithLog">PROPAGATION_REQUIRED</prop>
+				<prop key="prepare*">PROPAGATION_REQUIRED</prop>
+				<prop key="init*">PROPAGATION_REQUIRED</prop>
+				<prop key="import*">PROPAGATION_REQUIRED</prop>
+				<prop key="fill*">PROPAGATION_REQUIRED</prop>
+				<prop key="restore*">PROPAGATION_REQUIRED</prop>
+				<prop key="oper*">PROPAGATION_REQUIRED</prop>
+				<prop key="batch*">PROPAGATION_REQUIRED</prop>
+				<prop key="need*">PROPAGATION_REQUIRED</prop>
+				<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="copy*">PROPAGATION_REQUIRED</prop>
+				<prop key="extractive*">PROPAGATION_REQUIRED</prop>
+				<prop key="getNeedCarryInfo">PROPAGATION_REQUIRED</prop>
+				<prop key="parseAndCompareItem">PROPAGATION_REQUIRED</prop><!--com.krm.slsint.dataextractive.services.impl.ReadItemInfoService -->
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- Generic manager that can be used to do basic CRUD operations on any 
+		objects -->
+   <bean id="organService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.sysmanage.organmanage.services.impl.OrganServiceImpl">
+				<property name="organInfoDAO" ref="organInfoDAO" />
+				<property name="userDAO" ref="userDAO" />
+				<property name="organContrastDAO" ref="organContrastDAO" />
+				<property name="areaDAO" ref="areaDAO" />
+			</bean>
+		</property>
+	</bean>
+		<bean id="dictionaryService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.sysmanage.usermanage.services.impl.DictionaryServiceImpl">
+				<property name="dictionaryDAO" ref="dictionaryDAO" />
+			</bean>
+		</property>
+	</bean>
+     <bean id="userService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.sysmanage.usermanage.services.impl.UserServiceImpl">
+				<property name="userDAO" ref="userDAO" />
+				<property name="reportDefineDAO" ref="reportDefineDAO" />
+			</bean>
+		</property>
+	</bean>
+		<bean id="userRoleService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.sysmanage.usermanage.services.impl.UserRoleServiceImpl">
+				<property name="userRoleDAO" ref="userRoleDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="organService2" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.sysmanage.organmanage2.services.impl.OrganService2Impl">
+			    <property name="organTreeManager" ref="organTreeManager" />
+				<property name="organInfoDAO" ref="organInfoDAO2" />
+				<property name="oiDAO" ref="organInfoDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="menuManager" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.sysmanage.usermanage.services.impl.MenuManager">
+				<property name="dataSource" ref="dataSource" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="organTreeManager" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.sysmanage.organmanage2.services.impl.OrganTreeManagerImpl">
+				<property name="organTreeDAO" ref="organTreeDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="areaService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.sysmanage.organmanage2.services.impl.AreaServiceImpl">
+				<property name="areaDAO" ref="areaDAO" />
+				<property name="organInfoDAO" ref="organInfoDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="groupManageService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.sysmanage.groupmanage.service.impl.GroupManageServiceImpl">
+				<property name="dictionaryDAO" ref="dictionaryDAO" />
+				<property name="userDAO" ref="userDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="groupSortService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.sysmanage.groupmanage.service.impl.GroupSortServiceImpl">
+				<property name="dictionaryDAO" ref="dictionaryDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="reportConfigService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.sysmanage.reportdefine.services.impl.ReportConfigServiceImpl">
+				<property name="reportConfigDAO" ref="reportConfigDAO" />
+				<property name="dictionaryService" ref="dictionaryService" />
+				<property name="organService2" ref="organService2" />
+				<property name="userService" ref="userService" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="reportDefineService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.sysmanage.reportdefine.services.impl.ReportDefineServiceImpl">
+				<property name="reportDefineDAO" ref="reportDefineDAO" />
+				<property name="reportConfigDAO" ref="reportConfigDAO" />
+				<property name="organInfoDAO" ref="organInfoDAO" />
+				<property name="userDAO" ref="userDAO" />
+			</bean>
+		</property>
+	</bean>
+	<!-- -new qwk -->
+		<!--系统日志-->
+	<bean id="syslogService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.sysLog.services.impl.SysLogServiceImpl">
+				<property name="syslogdao" ref="syslogDAO"></property>
+			</bean>
+		</property>
+	</bean>
+	<!-- 规则配制 -->
+    <bean id="reportruleFromValidatorService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportrule.services.impl.FromValidatorServiceImpl">
+				<property name="reportruleFromValidatorDAO" ref="reportruleFromValidatorDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="reportruleReportConfigService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportrule.services.impl.ReportConfigServiceImpl">
+				<property name="reportrulerReportConfigDAO" ref="reportrulerReportConfigDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="reportruleReportDefineService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportrule.services.impl.ReportDefineServiceImpl">
+				<property name="reportrulerReportDefineDAO" ref="reportrulerReportDefineDAO" />
+			</bean>
+		</property>
+	</bean>
+	 <bean id="reportruleReportruleService" parent="txProxyTemplate" >
+		<property name="target">
+			<bean class="com.krm.ps.model.reportrule.services.impl.ReportRuleServiceImpl">
+				 <property name="reportrulerRportRuledao" ref="reportrulerRportRuledao" />
+			</bean>
+		</property>
+	</bean> 
+	<!-- 规则配制 end -->
+	<!-- 灵活查询 -->
+	<bean id="flexiblequeryDataFillService" parent="txProxyTemplate" >
+		<property name="target">
+			<bean class="com.krm.ps.model.flexiblequery.services.impl.DataFillServiceImpl">
+				 <property name="flexiblequeryDataFillDAO" ref="flexiblequeryDataFillDAO" />
+			</bean>
+		</property>
+	</bean>
+	
+
+	<!-- ==============================chm===================================== -->
+	<!-- datavalidation start-->
+	<bean id="reportRuleService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.datavalidation.services.impl.ReportRuleServiceImpl">
+				<property name="reportdao" ref="reportdao"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- datavalidation end-->
+	
+
+	<bean id="flexiblequeryReportruleService" parent="txProxyTemplate" >
+		<property name="target">
+			<bean class="com.krm.ps.model.flexiblequery.services.impl.ReportRuleServiceImpl">
+				 <property name="flexiblequeryReportRuleDAO" ref="flexiblequeryReportRuleDAO" />
+			</bean>
+		</property>
+	</bean> 
+	<bean id="flexiblequeryReportConfigService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.flexiblequery.services.impl.ReportConfigServiceImpl">
+				<property name="flexiblequeryReportConfigDAO" ref="flexiblequeryReportConfigDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="flexiblequeryOrganService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.flexiblequery.services.impl.OrganServiceImpl">
+				<property name="flexiblequeryOrganInfoDAO" ref="flexiblequeryOrganInfoDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="flexiblequeryReportDefineService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.model.flexiblequery.services.impl.ReportDefineServiceImpl">
+				<property name="flexiblequeryReportDefineDAO" ref="flexiblequeryReportDefineDAO" />
+			</bean>
+		</property>
+	</bean>
+	<!-- 灵活查询 end -->
+	<!-- 业务数据补录 -->
+	<bean id="datafillDataFillService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.model.datafill.services.impl.DataFillServiceImpl">
+				<property name="datafillDataFillDAO" ref="datafillDataFillDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="datafillFromValidatorService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.model.datafill.services.impl.FromValidatorServiceImpl">
+				<property name="datafillFromValidatorDAO" ref="datafillFromValidatorDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="datafillOrganService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.model.datafill.services.impl.OrganServiceImpl">
+				<property name="datafillOrganInfoDAO" ref="datafillOrganInfoDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="datafillReportConfigService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.model.datafill.services.impl.ReportConfigServiceImpl">
+				<property name="datafillReportConfigDAO" ref="datafillReportConfigDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="datafillReportDefineService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.model.datafill.services.impl.ReportDefineServiceImpl">
+				<property name="datafillReportDefineDAO" ref="datafillReportDefineDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="datafillReportRuleService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.ps.model.datafill.services.impl.ReportRuleServiceImpl">
+				<property name="datafillReportRuleDAO" ref="datafillReportRuleDAO" />
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="reportMoveVerifyService" class="com.krm.ps.model.datafill.services.impl.ReportMoveVerifyServiceImpl">
+		<property name="dao" ref="datafillReportDefineDAO"></property>
+	</bean>
+	<!-- 业务数据补录 end-->
+
+	
+	<!-- reportdefine start -->
+	<bean id="currencyManagementService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportdefine.services.impl.CurrencyManagementServiceImpl">
+				<property name="currencyManagementDAO" ref="currencyManagementDAO"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="rddictionaryService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportdefine.services.impl.DictionaryServiceImpl">
+				<property name="rddictionaryDAO" ref="rddictionaryDAO"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="rdreportConfigService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportdefine.services.impl.ReportConfigServiceImpl">
+				<property name="rdreportConfigDAO" ref="rdreportConfigDAO" />
+				<property name="dictionaryService" ref="rddictionaryService" />
+				<property name="rdreportDefineService" ref="rdreportDefineService" />
+				<property name="currencyManagementService" ref="rdcurrencyManagementService" />
+				<property name="organService2" ref="organService2" />
+				<property name="userService" ref="userService" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="rdreportDefineService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportdefine.services.impl.ReportDefineServiceImpl">
+				<property name="rdreportDefineDAO" ref="rdreportDefineDAO"/>
+				<property name="userDAO" ref="userDAO"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="rdcurrencyManagementService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportdefine.services.impl.CurrencyManagementServiceImpl">
+				<property name="currencyManagementDAO" ref="currencyManagementDAO"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="reportItemSortService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportdefine.services.impl.ReportItemSortServiceImpl">
+				<property name="rdreportDefineDAO" ref="rdreportDefineDAO"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="strdReporeWheconditionService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportdefine.services.impl.StrdreporeWheconditionServiceImpl">
+				<property name="strdReporeWheconditionDAO" ref="strdReporeWheconditionDAO"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- reportdefine end -->
+	
+	
+	<!-- repfile start -->
+	<bean id="repfileservice" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.repfile.service.impl.RepFileServiceImpl">
+				<property name="repfileDao" ref="repfileDao" />
+				<property name="DAOJdbc" ref="DAOJdbc" /> 
+				<property name="rfreportdao" ref="rfreportdao" />
+				<property name="rfreportDefineDAO" ref="rfreportDefineDAO" />
+				<property name="dataFillDAO" ref="dataFillDAO" />
+				 <property name="tarskService" ref="tarskService" /> 
+			</bean>
+		</property>
+	</bean>
+	<!-- repfile end -->
+	
+	<!-- reportview start -->
+	
+	<bean id="billExchangeService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportview.services.impl.BillExchangeServiceImpl">
+				<property name="billExchangeDAO" ref="billExchangeDAO"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="chartdefineService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportview.services.impl.ChartDefineServiceImpl">
+				<property name="reportChartDAO" ref="reportChartDAO"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="dataCarryService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportview.services.impl.DataCarryServiceImpl">
+				<property name="reportConfigDAO" ref="reportConfigDAO"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="LogService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.reportview.services.impl.LogServiceImpl">
+				<property name="logDAO" ref="logDAO" />
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- FileRepository -->
+	<bean id="fileRepositoryService" parent="txProxyTemplate">
+        <property name="target">
+            <bean class="com.krm.slsint.fileRepositoryManage.services.impl.FileRepositoryServiceImpl">
+                <property name="fileRepositoryDAO" ref="fileRepositoryDAO"/>
+                 <property name="fileShareDataDAO" ref="fileShareDataDAO"/>
+                 <property name="userDAO" ref="userDAO" />
+            </bean>
+        </property>
+    </bean>
+	
+	<!-- reportview end -->
+	<!-- ==============================chm===================================== -->
+	<bean id="queryDzService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.east1104dz.service.impl.QueryDzServiceImpl">
+				<property name="queryDzDao" ref="queryDzDao"></property>
+			</bean>
+		</property>
+	</bean>
+	
+		<bean id="workinstructionsService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.workinstructions.service.impl.WorkinstructionsServiceImpl">
+				<property name="workinstructionsDAO" ref="workinstructionsDAO"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="funconfigService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.model.funconfig.services.impl.FunconfigServiceImpl">
+				<property name="funconfigDao" ref="funconfigDao"/>
+			</bean>
+		</property>
+	</bean>
+	<bean id="tarskService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.tarsk.service.impl.TarskServiceImpl">
+				<property name="tskDao" ref="tskDao"/>
+			</bean>
+		</property>
+	</bean>
+	  <bean id="taskService" class="com.krm.ps.common.task.TaskServiceImpl"> 
+         <constructor-arg value="2" />
+         <constructor-arg value="86400000" />
+         <constructor-arg value="86400000" />
+    </bean>
+    
+	<bean id="workFileService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.slsint.workfile.services.impl.WorkFileServiceImpl">
+				<property name="workFileDAO" ref="workFileDAO" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="workMailService" parent="txProxyTemplate">
+		<property name="target">
+			<bean
+				class="com.krm.slsint.workfile.services.impl.WorkMailServiceImpl">
+				<property name="workMailDAO" ref="workMailDAO" />
+				<property name="areaService" ref="areaService" />
+				<property name="userService" ref="userService" />
+				<property name="fileRepositoryService" ref="fileRepositoryService" />
+			</bean>
+		</property>
+	</bean>
+    
+    <bean id="showBirtService" parent="txProxyTemplate">
+		<property name="target">
+			<bean class="com.krm.ps.birt.service.impl.ShowBirtServiceImpl">
+				<property name="sbd" ref="sbd"/>
+			</bean>
+		</property>
+	</bean>
+</beans>

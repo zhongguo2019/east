@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.usermanage.vo.UserRole"
+        table="umg_user_role"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">umg_user_role_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-UserRole.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="roleType"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="role_type"
+        />
+
+        <property
+            name="userId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="user_id"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-UserRole.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

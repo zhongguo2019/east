@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.krm.ps.model.vo.KettleData" table="KETTLE_DATA">
+
+		<id name="pkid" column="PKID" type="java.lang.Long">
+			<generator class="native">
+				<param name="sequence">KETTLE_DATA_SEQ</param>
+			</generator>
+		</id>
+		<property name="ktrPath" type="java.lang.String" update="true"
+			insert="true" column="KTR_PATH" />
+
+		<property name="userName" type="java.lang.String" update="true"
+			insert="true" column="USER_NAME" />
+				
+		<property name="logonName" type="java.lang.String" update="true"
+			insert="true" column="LOGON_NAME" />
+
+		<property name="ktrTime" type="java.lang.String" update="true"
+			insert="true" column="KTR_TIME" />
+			
+		<property name="ktrName" type="java.lang.String" update="true"
+			insert="true" column="KTR_NAME" />
+
+		<property name="ktrRemark" type="java.lang.String" update="true"
+			insert="true" column="KTR_REMARK" />
+				
+		<property name="attribute1" type="java.lang.String" update="true"
+			insert="true" column="ATTRIBUTE1" />
+
+		<property name="attribute2" type="java.lang.String" update="true"
+			insert="true" column="ATTRIBUTE2" />
+			
+		<property name="attribute3" type="java.lang.String" update="true"
+			insert="true" column="ATTRIBUTE3" />
+
+		<property name="attribute4" type="java.lang.String" update="true"
+			insert="true" column="ATTRIBUTE4" />
+		
+		<property name="attribute5" type="org.springframework.orm.hibernate3.support.BlobByteArrayType" update="true"
+			insert="true" column="ATTRIBUTE5" />
+
+	</class>
+
+</hibernate-mapping>

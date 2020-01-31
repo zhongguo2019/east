@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+<!--     <class
+        name="com.krm.ps.sysmanage.reportdefine.vo.ReportTemplate"
+        table="Code_rep_report"> -->
+        
+	<class name="com.krm.slsint.reportdefine.vo.ReportTemplate" table="collect_report">
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <!-- <param name="sequence">SHOW_ORDER</param> -->
+                <param name="increment">pkid</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-ReportType.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="code"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="CODE"
+        />
+
+        <property
+            name="reporttype"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="REPORT_TYPE"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="NAME"
+        />
+
+        <property
+            name="phytable"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="PHY_TABLE"
+        />
+      <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="DESCRIPTION"
+        />
+        <property
+            name="showorder"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="SHOW_ORDER"
+        />
+
+        <property
+            name="ismodel"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Is_model"
+        />
+
+        <property
+            name="createid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="CREATEID"
+        />
+
+       
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ReportType.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

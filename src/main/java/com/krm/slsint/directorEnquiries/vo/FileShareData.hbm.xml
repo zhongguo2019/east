@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.slsint.directorEnquiries.vo.FileShareData"
+        table="umg_file_share"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">umg_file_share_pkid_seq</param>
+              
+            </generator>
+            
+        </id>
+
+        <property
+            name="mpkid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="mpkid"
+        />
+
+        <property
+            name="show_order"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="show_order"
+        />
+
+        <property
+            name="status"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="user_id"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="user_id"
+        />
+
+        <property
+            name="organCode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="organ_code"
+        />
+
+        <property
+            name="deptId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="dept_id"
+        />
+
+        <property
+            name="userIdRight"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="userid_right"
+        />
+
+        <property
+            name="docRight"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="doc_right"
+        />
+
+        <property
+            name="editTime"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="edit_time"
+        />
+
+        <property
+            name="rightFlag"
+            type="java.lang.Character"
+            update="true"
+            insert="true"
+            column="right_flag"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-FileShareData.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.krm.ps.model.workinstructions.vo.Workaccessory" table="WORKACCESSORY">
+
+		<id name="pkid" column="pkid" type="java.lang.Long">
+			<generator class="native">
+				<param name="sequence">WORKACCESSORY_SEQ</param>
+				<!-- To add non XDoclet generator parameters, create a file named hibernate-generator-params-ReportTarget.xml 
+					containing the additional parameters and place it in your merge dir. -->
+			</generator>
+		</id>
+
+		<property name="title" type="java.lang.String" update="true"
+			insert="true" column="TITLE" />
+
+		<property name="filename" type="java.lang.String" update="true"
+			insert="true" column="FILENAME" />
+				
+		<property name="infoid" type="java.lang.Long" update="true"
+			insert="true" column="INFOID" />
+			
+		<property name="file1" type="org.springframework.orm.hibernate3.support.BlobByteArrayType" update="true"
+			insert="true" column="FILE1" />
+			
+		<property name="url" type="java.lang.String" update="true"
+			insert="true" column="URL" />
+			
+		<property name="houzhui" type="java.lang.String" update="true"
+			insert="true" column="HOUZHUI" />
+				
+			
+		<property name="backup2" type="java.lang.String" update="true"
+			insert="true" column="BACKUP2" />
+			
+		<property name="backup3" type="java.lang.String" update="true"
+			insert="true" column="BACKUP3" />	
+		<property name="backup4" type="java.lang.String" update="true"
+			insert="true" column="BACKUP4" />	
+		<property name="backup5" type="java.lang.String" update="true"
+			insert="true" column="BACKUP5" />								
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class  name="com.krm.ps.model.vo.CodeRepConfigure"  table="code_rep_configure" >
+
+        <id  name="pkid"  column="pkid"  type="java.lang.Long" >
+            <generator class="native">
+                <param name="sequence">CODE_REP_CONFIGURE_SEQ</param>
+            </generator>
+        </id>
+
+      <property name="organ_id" type="java.lang.String" update="true" insert="true" column="organ_id" />
+
+	  <property name="organ_name" type="java.lang.String" update="true" insert="true" column="organ_name" />
+	  
+	  <property name="report_id" type="java.lang.String" update="true" insert="true" column="report_id" />
+
+	  <property name="report_name" type="java.lang.String" update="true" insert="true" column="report_name" />
+	  
+	  
+	  <property name="target_id" type="java.lang.String" update="true" insert="true" column="target_id" />
+
+	  <property name="target_name" type="java.lang.String" update="true" insert="true" column="target_name" />
+	  
+	  
+	  <property name="rtype" type="java.lang.String" update="true" insert="true" column="rtype" />
+
+	  <property name="threshold" type="java.lang.String" update="true" insert="true" column="threshold" />
+	  
+	  <property name="attrbuter1" type="java.lang.String" update="true" insert="true" column="attrbuter1" />
+
+	  <property name="attrbuter2" type="java.lang.String" update="true" insert="true" column="attrbuter2" />
+	  
+	   <property name="attrbuter3" type="java.lang.String" update="true" insert="true" column="attrbuter3" />
+				
+		
+
+    </class>
+
+</hibernate-mapping>

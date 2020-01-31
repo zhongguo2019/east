@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.organmanage2.vo.OrganTreeNode"
+        table="code_org_tree"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="int"
+        >
+            <generator class="native">
+                <param name="sequence">code_org_tree_seq</param>
+            </generator>
+        </id>
+
+        <property
+            name="nodeId"
+            type="int"
+            update="true"
+            insert="true"
+            column="nodeid"
+        />
+
+        <property
+            name="parentId"
+            type="int"
+            update="true"
+            insert="true"
+            column="parentid"
+        />
+
+        <property
+            name="aliasName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="aliasname"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="description"
+        />
+
+        <property
+            name="idxId"
+            type="int"
+            update="true"
+            insert="true"
+            column="idxid"
+        />
+
+        <property
+            name="showChild"
+            type="int"
+            update="true"
+            insert="true"
+            column="isshowchild"
+        />
+
+        <property
+            name="subTreeTag"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="subtreetag"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-OrganTreeNode.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

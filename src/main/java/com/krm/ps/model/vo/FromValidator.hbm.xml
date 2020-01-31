@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.vo.FromValidator"
+        table="code_from_validator"
+    >
+
+        <id
+            name="pkid"
+            column="PKID"
+            type="java.lang.Long"
+        >
+        </id>
+       
+       <property
+            name="funname"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="FUNNAME"
+        />
+      <property
+            name="rulesname"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="RULESNAME"
+        />
+        <property
+            name="prompt"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="PROMPT"
+        />
+         <property
+            name="report_id"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="REPORT_ID"
+        />
+        
+         <property
+            name="funparam"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="FUNPARAM"
+        />
+         <property
+            name="target_field"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="TARGET_FIELD"
+        />
+       
+    </class>
+
+</hibernate-mapping>

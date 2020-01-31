@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.vo.ReportComType"
+        table="code_com_type"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">code_com_type_seq</param>
+            </generator>
+        </id>
+
+        <property
+            name="typename"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="type_name"
+        />
+         <property
+            name="flag"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="FLAG"
+        />
+  <property
+            name="systemcode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="systemcode"
+        />
+    </class>
+
+</hibernate-mapping>

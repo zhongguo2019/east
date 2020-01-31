@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.vo.RepFlfile"
+        table="DSP_FL_FILE"
+    >
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">DSP_FL_FILE_SEQ</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Dictionary.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="repfilename"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="FILENAME"
+        />
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="name"
+        />
+
+        <property
+            name="filepath"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="filepath"
+        />
+        <property
+            name="filebody"
+            type="org.springframework.orm.hibernate3.support.BlobByteArrayType"
+            update="true"
+            insert="true"
+            column="filebody"
+        />
+        <property
+            name="createdate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="createdate"
+        />
+        <property
+            name="filebath"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="filebath"
+        />
+<property
+            name="organcode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="organcode"
+        />
+  <property
+            name="datadate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="datadate"
+        />
+        <property
+            name="sysid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="sysid"
+        />
+        <property
+            name="userid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="userid"
+        />
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="status"
+        />
+        <property
+            name="downloadnum"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="downloadnum"
+        />
+        <property
+            name="fileid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="fileid"
+        />
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

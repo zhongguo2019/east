@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.slsint.workfile.vo.FileTransferData"
+        table="info_filetransfer"
+    >
+
+        <id
+            name="pkId"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">info_filetransfer_pkid_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-FileTransferData.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="businessOther"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="BUSINESS_OTHER"
+        />
+
+        <property
+            name="poper"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="p_oper"
+        />
+
+        <property
+            name="dateDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="p_date"
+        />
+
+        <property
+            name="title"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="title"
+        />
+         <property
+            name="unlock"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="unlock"
+        />
+        <property
+            name="content"
+            type="org.springframework.orm.hibernate3.support.ClobStringType"
+            update="true"
+            insert="true"
+            column="content"
+        />
+
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="businessDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="BUSINESS_DATE"
+        />
+
+        <property
+            name="businessOrganCode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="BUSINESS_ORGANCODE"
+        />
+
+        <property
+            name="businessReportId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="BUSINESS_REPORTID"
+        />
+
+        <property
+            name="businessStatus"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="BUSINESS_STATUS"
+        />
+
+        <property
+            name="businessUserId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="BUSINESS_USERID"
+        />
+
+        <property
+            name="itemtype"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="itemtype"
+        />
+
+        <property
+            name="mailBox"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="MAILBOX"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-FileTransferData.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

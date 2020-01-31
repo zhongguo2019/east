@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.reportdefine.vo.ReportConfig"
+        table="code_rep_config"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+        	<!-- DB2 主键生成策略必须使用sequence -->
+            <generator class="native">
+                <param name="sequence">code_rep_config_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-ReportConfig.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="defChar"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="def_char"
+        />
+
+        <property
+            name="defInt"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="def_int"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="description"
+        />
+
+        <property
+            name="funId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="fun_id"
+        />
+
+        <property
+            name="idxId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="idx_id"
+        />
+
+        <property
+            name="reportId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="report_id"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ReportConfig.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

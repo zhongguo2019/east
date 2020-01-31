@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+   <class
+        name="com.krm.ps.sysmanage.usermanage.vo.UserDetail"
+        table="umg_user_detail"
+    >
+
+        <id
+            name="udPkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">umg_user_detail_seq</param>
+            </generator>
+        </id>
+
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="username"
+        />
+
+        <property
+            name="idCard"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="id_card"
+        />
+
+        <property
+            name="phone"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="phone"
+        />
+
+        <property
+            name="organId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="organ_id"
+        />
+
+		<property
+            name="tellerId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="teller_id"
+        />
+    </class>
+
+</hibernate-mapping>

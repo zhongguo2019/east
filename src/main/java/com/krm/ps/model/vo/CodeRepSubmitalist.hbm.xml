@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class  name="com.krm.ps.model.vo.CodeRepSubmitalist"  table="code_rep_submitalist" >
+     
+      <id  name="pkid"  column="pkid"  type="java.lang.Long" >
+            <generator class="native">
+                <param name="sequence">CODE_REP_JHGZ_SEQ</param>
+            </generator>
+      </id>
+     
+      <property name="reportname_cn" type="java.lang.String" update="true" insert="true" column="reportname_cn" />
+     
+      <property name="reportname_en" type="java.lang.String" update="true" insert="true" column="reportname_en" />
+
+	  <property name="record_number" type="java.lang.Long" update="true" insert="true" column="record_number" />
+	  
+	  <property name="reflecting_business" type="java.lang.String" update="true" insert="true" column="reflecting_business" />
+
+	  <property name="files_name" type="java.lang.String" update="true" insert="true" column="files_name" />
+	  
+	  <property name="files_bytes" type="java.lang.String" update="true" insert="true" column="files_bytes" />
+
+	  <property name="ischecked" type="java.lang.String" update="true" insert="true" column="ischecked" />
+	  
+	  <property name="remarks" type="java.lang.String" update="true" insert="true" column="remarks" />
+	  
+	   <property name="organid" type="java.lang.String" update="true" insert="true" column="organid" />
+	   
+	   <property name="information" type="java.lang.String" update="true" insert="true" column="information" />
+
+	
+    </class>
+
+</hibernate-mapping>

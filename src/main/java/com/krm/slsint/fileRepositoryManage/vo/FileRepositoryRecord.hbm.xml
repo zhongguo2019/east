@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.slsint.fileRepositoryManage.vo.FileRepositoryRecord"
+        table="CODE_FILE_REPOSITORY"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">code_file_repository_pkid_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-FileRepositoryRecord.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="organId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="organ_id"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="description"
+        />
+
+        <property
+            name="editTime"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="edit_time"
+        />
+
+        <property
+            name="fileContent"
+            type="org.springframework.orm.hibernate3.support.BlobByteArrayType"
+            update="true"
+            insert="true"
+            column="file_content"
+        />
+
+        <property
+            name="fileName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="file_name"
+        />
+
+        <property
+            name="filePath"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="file_path"
+        />
+
+        <property
+            name="funId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="fun_id"
+        />
+
+        <property
+            name="memo"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="memo"
+        />
+
+        <property
+            name="namePostfix"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="name_postfix"
+        />
+
+        <property
+            name="namePrefix"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="name_prefix"
+        />
+
+        <property
+            name="showOrder"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="show_order"
+        />
+
+        <property
+            name="userId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="user_id"
+        />
+
+        <property
+            name="status"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="status"
+        />
+        <property
+            name="freq"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="freq"
+        />
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-FileRepositoryRecord.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

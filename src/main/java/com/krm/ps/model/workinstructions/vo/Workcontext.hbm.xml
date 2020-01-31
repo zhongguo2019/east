@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.krm.ps.model.workinstructions.vo.Workcontext" table="WORKCONTEXT">
+
+		<id name="pkid" column="pkid" type="java.lang.Long">
+			<generator class="native">
+				<param name="sequence">WORKCONTEXT_SEQ</param>
+				<!-- To add non XDoclet generator parameters, create a file named hibernate-generator-params-ReportTarget.xml 
+					containing the additional parameters and place it in your merge dir. -->
+			</generator>
+		</id>
+
+		<property name="title" type="java.lang.String" update="true"
+			insert="true" column="TITLE" />
+
+		<property name="displaytitle" type="java.lang.String" update="true"
+			insert="true" column="DISPLAYTITLE" />
+				
+		<property name="treeid" type="java.lang.Long" update="true"
+			insert="true" column="TREEID" />
+			
+		<property name="context" type="org.springframework.orm.hibernate3.support.BlobByteArrayType" update="true"
+			insert="true" column="context" />
+			
+		<property name="begintime" type="java.lang.String" update="true"
+			insert="true" column="BEGINTIME" />
+			
+		<property name="updatetime" type="java.lang.String" update="true"
+			insert="true" column="UPDATETIME" />
+	<property name="authorid" type="java.lang.Long" update="true"
+			insert="true" column="AUTHORID" />	
+							
+			
+		<property name="status" type="java.lang.Integer" update="true"
+			insert="true" column="STATUS" />
+			
+		<property name="backup2" type="java.lang.String" update="true"
+			insert="true" column="BACKUP2" />
+			
+		<property name="backup3" type="java.lang.String" update="true"
+			insert="true" column="BACKUP3" />	
+		<property name="backup4" type="java.lang.String" update="true"
+			insert="true" column="BACKUP4" />	
+		<property name="backup5" type="java.lang.String" update="true"
+			insert="true" column="BACKUP5" />								
+	</class>
+
+</hibernate-mapping>

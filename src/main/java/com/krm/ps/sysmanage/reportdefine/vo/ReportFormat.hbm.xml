@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.reportdefine.vo.ReportFormat"
+        table="rep_format"
+    >
+
+        <id
+            name="pkId"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <!--
+            <generator class="native">
+                <param name="sequence">rep_format_pkid_seq</param>
+               
+              
+            </generator>
+             -->
+             <!-- 根据不同环境，配置相应信息 2012-04-05  贡琳  -->
+            <generator class="native">
+                <param name="sequence">rep_format_pkid_seq</param>
+              
+            </generator>
+        </id>
+
+        <property
+            name="beginDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="begin_date"
+        />
+
+        <property
+            name="createDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="create_date"
+        />
+
+        <property
+            name="editDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="edit_date"
+        />
+
+        <property
+            name="endDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="end_date"
+        />
+
+        <property
+            name="reportId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="report_id"
+        />
+
+        <property
+            name="reportFormat"
+            type="org.springframework.orm.hibernate3.support.ClobStringType"
+            update="true"
+            insert="true"
+            column="report_format"
+        />
+
+        <property
+            name="frequency"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="frequency"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ReportFormat.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

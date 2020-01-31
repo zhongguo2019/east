@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.vo.ReportTask"
+        table="code_rep_task"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">code_rep_task_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Dictionary.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="reportId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="report_id"
+        />
+
+        <property
+            name="reportName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="report_name"
+        />
+
+
+        <property
+            name="organId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="organ_id"
+        />
+
+        <property
+            name="organName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="organ_name"
+        />
+
+        <property
+            name="createPerson"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="create_person"
+        />
+        <property
+            name="createPersonid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="create_personid"
+        />
+        <property
+            name="creatTime"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="creat_time"
+        />
+       
+        <property
+            name="executTime"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="execut_time"
+        />
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="status"
+        />
+         <property
+            name="content"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="content"
+        />
+        <property
+            name="taskType"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="task_type"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

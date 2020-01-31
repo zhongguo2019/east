@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.vo.Sysparam"
+        table="SYSPARAM"
+    >
+              
+       <composite-id>   
+            <key-property name="currentdate" type="java.util.Date">   
+                <column name="CURRENTDATE" />   
+            </key-property>   
+  
+            <key-property name="lastdate" type="java.util.Date">   
+                <column name="LASTDATE" />   
+            </key-property>   
+  
+            <key-property name="nextdate" type="java.util.Date">   
+                <column name="NEXTDATE" />   
+            </key-property>   
+     
+        </composite-id>   
+       
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="logForm" type="com.krm.ps.sysmanage.usermanage.web.form.LogForm" />
+		<form-bean name="userForm" type="com.krm.ps.sysmanage.usermanage.web.form.UserForm" />
+		<form-bean name="roleForm" type="com.krm.ps.sysmanage.usermanage.web.form.roleForm" />
+		<form-bean name="organForm" type="com.krm.ps.sysmanage.organmanage.web.form.OrganForm" />
+		<form-bean name="organTreeForm" type="com.krm.ps.sysmanage.organmanage2.web.form.OrganTreeForm" />
+		<form-bean name="groupReportForm" type="com.krm.ps.sysmanage.groupmanage.web.form.GroupReportForm" />
+		<form-bean name="reportConfigForm" type="com.krm.ps.sysmanage.reportdefine.web.form.ReportConfigForm" />
+		<form-bean name="dictionaryForm" type="com.krm.ps.framework.common.dictionary.web.form.DictionaryForm" />
+		<form-bean name="sortForm" type="com.krm.ps.framework.common.sort.web.form.SortForm" />
+		<form-bean name="sysInitForm" type="com.krm.ps.sysmanage.organmanage.web.form.SysInitForm" />
+		<form-bean name="userReportForm" type="com.krm.ps.sysmanage.usermanage.web.form.UserReportForm" />
+		<!-- =================chm===================== -->
+		<form-bean name="reportTypeForm" type="com.krm.ps.model.reportdefine.web.form.ReportTypeForm" />
+		<form-bean name="reportTargetForm" type="com.krm.ps.model.reportdefine.web.form.ReportTargetForm" />
+		<form-bean name="reportForm" type="com.krm.ps.model.reportdefine.web.form.ReportForm" />
+		<form-bean name="dataValidationForm" type="com.krm.ps.model.datavalidation.web.form.ReportViewForm" />
+		<form-bean name="repFlFomatForm" type="com.krm.ps.model.repfile.web.form.RepFlFomatForm" />
+		<form-bean name="reportViewForm" type="com.krm.ps.model.reportview.web.form.ReportViewForm" />
+		<form-bean name="xlsInitForm0" type="com.krm.ps.model.datafill.web.form.XLSInitForm0" />
+		<form-bean name="xlsInitForm" type="com.krm.ps.model.xlsinit.web.form.XLSInitForm" />
+
+		<!-- 2015-06-01 -->
+		<form-bean name="workFileForm" type="com.krm.slsint.workfile.web.form.WorkFileForm" />
+
+		<!-- <form-bean name="excelForm" type="com.krm.ps.model.datafill.vo.excelForm"/> -->
+
+		<!-- qwk -->
+		<form-bean name="reportDataForm" type="com.krm.ps.model.datafill.web.form.ReportDataForm" />
+		<form-bean name="datafillReportViewForm" type="com.krm.ps.model.datafill.web.form.ReportViewForm" />
+		<form-bean name="studentLoanForm" type="com.krm.ps.model.datafill.web.form.StudentLoanForm" />
+		<form-bean name="flexibleQueryForm" type="com.krm.ps.model.flexiblequery.web.from.FlexibleQueryForm" />
+
+		<form-bean name="ktrForm" type="com.krm.ps.model.repfile.web.form.KtrForm" />
+		<form-bean name="queryDzFrom" type="com.krm.ps.model.east1104dz.web.from.QueryDzFrom" />
+		<form-bean name="workinstructionsForm"
+			type="com.krm.ps.model.workinstructions.web.form.WorkinstructionsForm" />
+		<form-bean name="funconfigForm" type="com.krm.ps.model.funconfig.web.form.FunconfigForm" />
+	</form-beans>
+
+	<!-- ========== Global Exceptions Definitions =================================== -->
+	<!-- <global-exceptions> <exception type="java.lang.Exception" key="errors.general" path="/error.jsp" handler="com.krm.ps.framework.common.web.action.ActionExceptionHandler" 
+		/> </global-exceptions> -->
+
+	<!-- ========== Global Forward Definitions =================================== -->
+	<global-forwards>
+		<forward name="tree" path="/ps/uitl/krmtree/tree.jsp" />
+		<forward name="loginpage" path="/loginAction.do?method=enterLogin" redirect="false" />
+	</global-forwards>
+
+	<!-- ========== Action Mapping Definitions =====wfb============================== -->
+	<action-mappings>
+		<action path="/loginAction" type="com.krm.ps.sysmanage.usermanage.web.action.LoginAction" name="logForm"
+			scope="request" input="edit" parameter="method" unknown="false" validate="false">
+			<forward name="logpage" path="/plat/yjh/logpage.jsp" redirect="false" />
+			<forward name="pass" path="/frMain.jsp" redirect="false" />
+			<forward name="home" path="/home.jsp" redirect="false" />
+			<forward name="updatePassword" path="/fmDialog.jsp" redirect="false" />
+			<forward name="zhbslogtop" path="/plat/zhbs/top.jsp" redirect="false" />
+			<forward name="logtop" path="/top.jsp" redirect="false" />
+			<forward name="searchmain" path="/frMain.jsp" redirect="false" />
+			<forward name="ZHBSsearchmain" path="/plat/zhbs/krm_zhbs.jsp" redirect="false" />
+			<forward name="logpagerhbz" path="/plat/rhbz/logpage.jsp" redirect="false" />
+			<forward name="logpagekhfx" path="/plat/khfx/logpage.jsp" redirect="false" />
+			<forward name="logpageyjh" path="/plat/yjh/logpage.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+			
+			<forward name="searchmain_alte" path="/frMain_alte.jsp" redirect="false" />
+			<forward name="searchmain_2020" path="/frMain_2020.jsp" redirect="false" />
+		</action>
+
+		<action path="/userAction" type="com.krm.ps.sysmanage.usermanage.web.action.UserAction" name="userForm"
+			scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="beforeadd" path="/ps/model/sysmanage/usermanage/searchBeforeAdd.jsp" />
+			<forward name="edit" path="/ps/model/sysmanage/usermanage/userForm.jsp" redirect="false" />
+			<forward name="list" path="/ps/model/sysmanage/usermanage/userList.jsp" redirect="false" />
+			<forward name="fmDialog" path="/fmDialog.jsp" redirect="false" />
+			<forward name="userlistref" path="/ps/model/sysmanage/usermanage/userlistref.jsp" redirect="false" />
+			<forward name="refuser" path="/ps/model/sysmanage/usermanage/refuser.jsp" redirect="false" />
+			<forward name="refuser2" path="/ps/model/sysmanage/usermanage/refuser2.jsp" redirect="false" />
+			<forward name="pass" path="/frMain.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+		<action path="/userRoleAction" type="com.krm.ps.sysmanage.usermanage.web.action.UserRoleAction" name="roleForm"
+			scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/ps/model/sysmanage/usermanage/userrole.jsp" redirect="false" />
+			<forward name="roleForm" path="/ps/model/sysmanage/usermanage/roleForm.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+		<action path="/organAction" type="com.krm.ps.sysmanage.organmanage.web.action.OrganAction" name="organForm"
+			scope="request" input="edit" parameter="method" unknown="false" validate="false">
+			<forward name="edit" path="/ps/model/sysmanage/organmanage/organForm.jsp" redirect="false" />
+			<forward name="list" path="/ps/model/sysmanage/organmanage/organList.jsp" redirect="false" />
+			<forward name="sort" path="/ps/uitl/krmtree/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/organAction.do?method=list" redirect="false" />
+			<forward name="syncorgan" path="/ps/model/sysmanage/organmanage/syncOrgan.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+
+		</action>
+		<action path="/groupReportAction" type="com.krm.ps.sysmanage.groupmanage.web.action.GroupReportAction"
+			name="groupReportForm" scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/ps/model/groupmanage/groupManageList.jsp" redirect="false" />
+			<forward name="editGroupReport" path="/ps/model/groupmanage/groupReport.jsp" redirect="false" />
+			<forward name="addGroupReport" path="/ps/model/groupmanage/addGroupReport.jsp" redirect="false" />
+			<forward name="deleteError" path="/ps/model/groupmanage/deleteError.jsp" redirect="false" />
+			<forward name="showGroupUsers" path="/ps/model/groupmanage/showGroupUsers.jsp" redirect="false" />
+			<forward name="showGroupPurview" path="/ps/model/groupmanage/showGroupPurview.jsp" redirect="false" />
+			<forward name="sort" path="/ps/uitl/krmtree/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/groupReportAction.do?method=list" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+		<action path="/dicAction" type="com.krm.slsint.organmanage.web.action.DicAction" parameter="method"
+			unknown="false" validate="false">
+			<forward name="list" path="/dictionary/dicList.jsp" redirect="false" />
+			<forward name="sublist" path="/dictionary/subdicList.jsp" redirect="false" />
+			<forward name="edit" path="/dictionary/dicedit.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+		<action path="/reportConfigAction" type="com.krm.ps.sysmanage.reportdefine.web.action.ReportConfigAction"
+			name="reportConfigForm" scope="request" input="edit" parameter="method" unknown="false" validate="false">
+			<forward name="edit" path="/ps/model/reportdefine/reportConfigForm.jsp" redirect="false" />
+			<forward name="list" path="/ps/model/reportdefine/reportConfigList.jsp" redirect="false" />
+			<forward name="editrisk" path="/ps/model/reportdefine/editrisk.jsp" redirect="false" />
+			<forward name="showorgan" path="/ps/model/reportdefine/organ.jsp" redirect="false" />
+			<forward name="config12" path="/ps/model/reportdefine/configList.jsp" redirect="false" />
+			<forward name="configedit" path="/ps/model/reportdefine/configForm.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+		<action path="/menu" type="com.krm.ps.sysmanage.usermanage.web.action.MenuAction" unknown="false"
+			validate="false">
+			<forward name="success" path="/frmenu.jsp" redirect="false" />
+			<forward name="ZHBSmenu" path="/plat/zhbs/frmenu.jsp" redirect="false" />
+			<forward name="gotop" path="/menubar.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+		<action path="/organTreeAction" type="com.krm.ps.sysmanage.organmanage2.web.action.OrganTreeAction"
+			name="organTreeForm" scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="beforeadd" path="/ps/uitl/krmtree/tree.jsp" redirect="false" />
+			<forward name="list" path="/ps/model/sysmanage/organTreeManage/viewOrganTree.jsp" redirect="false" />
+			<forward name="edit" path="/ps/model/sysmanage/organTreeManage/organTreeForm.jsp" redirect="false" />
+			<forward name="new" path="/ps/model/sysmanage/organTreeManage/organTreeForm.jsp" redirect="false" />
+			<forward name="copy" path="/ps/model/sysmanage/organTreeManage/organTreeForm.jsp" redirect="false" />
+			<forward name="tree" path="/ps/uitl/krmtree/tree.jsp" redirect="false" />
+			<forward name="sort" path="/ps/uitl/krmtree/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/organTreeAction.do?method=list" redirect="false" />
+			<forward name="viewtree" path="/ps/model/sysmanage/organTreeManage/organTree.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+		<action path="/DictionaryAction" type="com.krm.ps.sysmanage.usermanage.web.action.DictionaryAction"
+			name="dictionaryForm" scope="request" input="dictionary" parameter="method" unknown="false" validate="false">
+			<forward name="dictionary" path="/ps/model/sysmanage/usermanage/Dictionary.jsp" redirect="false" />
+			<forward name="inanition" path="/inanition.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+		<action path="/sortAction" type="com.krm.ps.framework.common.sort.web.action.SortAction" name="sortForm"
+			scope="request" input="view" parameter="method" unknown="false" validate="false">
+			<forward name="view" path="/ps/uitl/krmtree/uploadForm.jsp" redirect="false" />
+		</action>
+		<action path="/dicAction" type="com.krm.ps.sysmanage.organmanage.web.action.DicAction" parameter="method"
+			unknown="false" validate="false">
+			<forward name="list" path="/ps/model/dictionary/dicList.jsp" redirect="false" />
+			<forward name="sublist" path="/ps/model/dictionary/subdicList.jsp" redirect="false" />
+			<forward name="edit" path="/ps/model/dictionary/dicedit.jsp" redirect="false" />
+		</action>
+		<action path="/treeAction" type="com.krm.ps.sysmanage.organmanage2.web.action.TreeAction" parameter="method"
+			unknown="false" validate="false">
+			<forward name="tree" path="/ps/uitl/krmtree/tree.jsp" redirect="false" />
+		</action>
+		<action path="/sysInitAction" type="com.krm.ps.sysmanage.organmanage.web.action.SysInitAction"
+			name="sysInitForm" scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="initform" path="/ps/model/sysmanage/organmanage/sysinit.jsp" redirect="false" />
+		</action>
+		<action path="/userReportAction" type="com.krm.ps.sysmanage.usermanage.web.action.UserReportAction"
+			name="userReportForm" scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/ps/model/sysmanage/usermanage/userList.jsp" redirect="false" />
+			<forward name="editUserReport" path="/ps/model/sysmanage/usermanage/userReport.jsp" redirect="false" />
+			<forward name="list" path="/ps/model/sysmanage/usermanage/userList.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<!-- =====================================chm========================================= -->
+		<action path="/reportTypeAction" type="com.krm.ps.model.reportdefine.web.action.ReportTypeAction"
+			name="reportTypeForm" scope="request" input="edit" parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/ps/model/reportdefine/reportTypeList.jsp" redirect="false" />
+			<forward name="edit" path="/ps/model/reportdefine/reportTypeForm.jsp" redirect="false" />
+			<forward name="sort" path="/ps/model/reportdefine/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/reportTypeAction.do?method=list" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/reportAction" type="com.krm.ps.model.reportdefine.web.action.ReportAction" name="reportForm"
+			scope="request" input="edit" parameter="method" unknown="false" validate="false">
+			<forward name="edit" path="/ps/model/reportdefine/reportForm.jsp" redirect="false" />
+			<forward name="search" path="/ps/model/reportdefine/reportSearchForm.jsp" redirect="false" />
+			<forward name="list" path="/ps/model/reportdefine/reportList.jsp" redirect="false" />
+			<forward name="listUndeleteable" path="/formulaDefine.do?method=listUndeleteableFormulas" redirect="false" />
+			<forward name="sort" path="/ps/model/reportdefine/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/reportAction.do?method=list" redirect="false" />
+			<forward name="author" path="/ps/model/reportdefine/reportAuthor.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/reportTargetAction" type="com.krm.ps.model.reportdefine.web.action.ReportTargetAction"
+			name="reportTargetForm" scope="request" input="edit" parameter="method" unknown="false" validate="false">
+			<forward name="edit" path="/ps/model/reportdefine/reportTargetForm.jsp" redirect="false" />
+			<forward name="list" path="/ps/model/reportdefine/reportTargetList.jsp" redirect="false" />
+			<forward name="targetUI" path="/ps/model/reportdefine/targetManage.jsp" redirect="false" />
+			<forward name="targesendtUI" path="/ps/model/reportdefine/targetSendManage.jsp" redirect="false" />
+			<forward name="listUndeleteable" path="/formulaDefine.do?method=listUndeleteableFormulas" redirect="false" />
+			<forward name="sort" path="/ps/model/reportdefine/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/reportTargetAction.do?method=list" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/datavalidation" type="com.krm.ps.model.datavalidation.web.action.ReportRuleAction"
+			name="dataValidationForm" scope="request" input="enter" parameter="method" unknown="false" validate="false">
+			<forward name="comlogicrule" path="/ps/model/datavalidation/com_logicrule.jsp" redirect="false"></forward>
+			<forward name="resultfullList" path="/ps/model/datavalidation/resultfullList.jsp" redirect="false"></forward>
+			<forward name="resultLogList" path="/ps/model/datavalidation/resultLogList.jsp" redirect="false"></forward>
+			<forward name="rulecheckpercenList" path="/ps/model/datavalidation/rulecheckprigressList.jsp"
+				redirect="false"></forward>
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/repFileAction" type="com.krm.ps.model.repfile.web.action.RepFileAction" name="repFlFomatForm"
+			scope="request" input="enter" parameter="method" unknown="false" validate="false">
+			<forward name="createfileSearch" path="/ps/model/repfile/createfileSearch.jsp" redirect="false"></forward>
+			<forward name="downloadfileList" path="/ps/model/repfile/downloadfileList.jsp" redirect="false"></forward>
+			<forward name="createfileprompt" path="/ps/model/repfile/createfileprompt.jsp" redirect="false"></forward>
+			<forward name="reportlistName" path="/ps/model/repfile/createfileSearch.jsp" redirect="false"></forward>
+			<forward name="listSubTarsk" path="/ps/model/repfile/subTarskList.jsp" redirect="false"></forward>
+			<forward name="openKettle" path="/ps/model/repfile/openKettle.jsp" redirect="false" />
+			<forward name="openattach" path="/ps/model/repfile/openattach.jsp" redirect="false" />
+			<forward name="listRepConfigure" path="/ps/model/repfile/listRepConfigure.jsp" redirect="false"></forward>
+			<forward name="listRepJhgz" path="/ps/model/repfile/listRepJhgz.jsp" redirect="false"></forward>
+			<forward name="listRepJhgzOne" path="/ps/model/repfile/listRepJhgzOne.jsp" redirect="false"></forward>
+			<forward name="fileResult" path="/ps/model/repfile/fileResult.jsp" redirect="false"></forward>
+			<forward name="importDataFromXls" path="/ps/model/repfile/xlinputdata.jsp" />
+			<forward name="listRepJhgzZf" path="/ps/model/repfile/listRepJhgzZf.jsp" redirect="false"></forward>
+			<forward name="listRepJhgzZfOne" path="/ps/model/repfile/listRepJhgzZfOne.jsp" redirect="false"></forward>
+			<forward name="importDataFromXlsZf" path="/ps/model/repfile/xlinputdataZf.jsp" />
+			<forward name="error" path="/error.jsp" />
+			<forward name="repSubmitalist" path="/ps/model/repfile/repSubmitalist.jsp" redirect="false"></forward>
+			<forward name="listRepsubmitAListOne" path="/ps/model/repfile/listRepsubmitAListOne.jsp" redirect="false"></forward>
+		</action>
+
+		<action path="/reportView" type="com.krm.ps.model.reportview.web.action.ReportViewAction" name="reportViewForm"
+			scope="request" input="search" parameter="method" unknown="false" validate="false">
+			<forward name="search" path="/ps/model/reportview/reportSearchForm.jsp" redirect="false" />
+			<forward name="view" path="/ps/model/reportview/reportFileView.jsp" redirect="false" />
+			<forward name="tree" path="/ps/model/reportview/tree.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/xlsInit0" type="com.krm.ps.model.datafill.web.action.XLSInitAction0" name="xlsInitForm0"
+			scope="request" input="search" parameter="method" unknown="false" validate="false">
+			<forward name="xlslsint" path="/ps/model/datafill/xlinputdata0.jsp" />
+		</action>
+
+		<action path="/xlsInit" type="com.krm.ps.model.xlsinit.web.action.XLSInitAction" name="xlsInitForm"
+			scope="request" input="search" parameter="method" unknown="false" validate="false">
+			<forward name="search" path="/ps/model/xlsinit/xlsinit.jsp" redirect="false" />
+			<forward name="init" path="/ps/model/xlsinit/xlsinit.jsp" redirect="false" />
+			<forward name="xlslsint" path="/ps/model/xlsinit/xlinputdata.jsp" redirect="false" />
+			<forward name="xlinputdatajhgz" path="/ps/model/xlsinit/xlinputdatajhgz.jsp" redirect="false" />
+			<forward name="xlinputdatajhgzZf" path="/ps/model/xlsinit/xlinputdatajhgzZf.jsp" redirect="false" />
+		</action>
+
+		<action path="/workFile" type="com.krm.slsint.workfile.web.action.WorkFileAction" name="workFileForm"
+			scope="request" input="addList" parameter="method" unknown="false" validate="false">
+			<forward name="addList" path="/workfile/workFileForm.jsp" redirect="false" />
+			<forward name="fileList" path="/workfile/workFileList.jsp" redirect="false" />
+			<forward name="view" path="/workfile/workFileContent.jsp" redirect="false" />
+			<forward name="search" path="/workfile/workFileSearch.jsp" redirect="false" />
+		</action>
+
+		<action path="/reportrule" type="com.krm.ps.model.reportrule.web.action.ReportRuleAction" name="reportViewForm"
+			scope="request" input="enter" parameter="method" unknown="false" validate="false">
+			<forward name="enterbasicrule" path="/ps/model/reportrule/enter_basicrule.jsp" redirect="false"></forward>
+			<forward name="enterprirule" path="/ps/model/reportrule/enter_privaterule.jsp" redirect="false"></forward>
+			<forward name="editbasicrule" path="/ps/model/reportrule/edit_basicrule.jsp" redirect="false"></forward>
+			<forward name="editprirule" path="/ps/model/reportrule/edit_privaterule.jsp" redirect="false"></forward>
+			<forward name="editdefrule" path="/ps/model/reportrule/edit_defaultrule.jsp" redirect="false"></forward>
+			<forward name="listbasicrule" path="/ps/model/reportrule/list_basicrule.jsp" redirect="false"></forward>
+			<forward name="listprirule" path="/ps/model/reportrule/list_privaterule.jsp" redirect="false"></forward>
+			<forward name="listbasicruledetail" path="/ps/model/reportrule/list_detailbasicrule.jsp" redirect="false"></forward>
+			<forward name="listpriruledetail" path="/ps/model/reportrule/list_detailprirule.jsp" redirect="false"></forward>
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/integratedQuery" type="com.krm.ps.model.reportrule.web.action.IntegratedQueryAction"
+			name="integratedQueryForm" scope="request" input="queryForm" parameter="method" unknown="false" validate="false">
+		</action>
+
+		<action path="/flexiblequery" type="com.krm.ps.model.flexiblequery.web.action.QueryAction"
+			name="flexibleQueryForm" scope="request" input="enter" parameter="method" unknown="false" validate="false">
+			<forward name="enterreportdataresult" path="/ps/model/flexiblequery/reportDataList.jsp" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/datafillreportView" type="com.krm.ps.model.datafill.web.action.ReportViewAction"
+			name="datafillReportViewForm" scope="request" input="search" parameter="method" unknown="false" validate="false">
+			<forward name="search1" path="/ps/model/datafill/reportSearchForm.jsp" redirect="false" />
+			<forward name="search2" path="/ps/model/datafill/reportEditForm.jsp" redirect="false" />
+			<forward name="searchDatafill1" path="/ps/model/datafill/reportSearchForm1.jsp" redirect="false" />
+			<forward name="searchDatafill" path="/ps/model/datafill/reportSearchForm.jsp" redirect="false" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/dataFill" type="com.krm.ps.model.datafill.web.action.DataFillAction" name="reportDataForm"
+			scope="request" input="search" parameter="method" unknown="false" validate="false">
+			<forward name="editUI" path="/ps/model/datafill/reportDataEdit.jsp" />
+			<forward name="editUI2" path="/ps/model/datafill/reportDataInputEdit.jsp" />
+			<forward name="editUI2bug" path="/ps/model/datafill/reportDataInputEditbug.jsp" />
+			<forward name="enterreportdataresultde" path="/ps/model/datafill/reportDataList.jsp" />
+			<forward name="importDataOne" path="/ps/model/datafill/importDataOne.jsp" />
+			<forward name="editOneUI2" path="/ps/model/datafill/editOneData2.jsp" />
+			<forward name="error" path="/error.jsp" />
+			<forward name="reportguide" path="/ps/model/datafill/reportGuide.jsp" />
+			<forward name="reportguideDetailed" path="/ps/model/datafill/reportGuideDetail.jsp" />
+			<forward name="reportList" path="/ps/model/datafill/reportList.jsp" />
+			<forward name="importDataFromXls" path="/ps/model/datafill/xlinputdata.jsp" />
+			<forward name="xlinputdata" path="/ps/model/datafill/xlinputdata.jsp" />
+			<forward name="Leftreportguide" path="/ps/model/common/LeftReportGuide.jsp" />
+			<forward name="reportMove" path="/ps/model/datafill/reportmove.jsp" />
+			
+			<forward name="reportguide_alte" path="/ps/model/datafill/reportGuide_alte.jsp" />
+			<forward name="reportguideDetailed_alte" path="/ps/model/datafill/reportGuideDetail_alte.jsp" />
+		</action>
+
+		<!-- <action path="/excelUpload" type="com.krm.ps.model.datafill.web.action.DataFillAction" name="excelForm" scope="request" 
+			input="search" parameter="method" unknown="false" validate="false"> <forward name="openattach" path="/ps/model/datafill/openattach.jsp" 
+			/> </action> -->
+
+
+		<action path="/querydz" type="com.krm.ps.model.east1104dz.web.action.QueryDzAction" name="queryDzFrom"
+			scope="request" input="search" parameter="method" unknown="false" validate="false">
+			<forward name="queryorgandate" path="/ps/model/east1104dz/east1104dz.jsp" />
+			<forward name="east1104list" path="/ps/model/east1104dz/east1104list.jsp" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/studentLoan" type="com.krm.ps.model.datafill.web.action.StudentLoanAction"
+			name="studentLoanForm" scope="request" input="edit" parameter="method" unknown="false" validate="false">
+			<forward name="error" path="/error.jsp" />
+		</action>
+		<action path="/workinstructionsAction"
+			type="com.krm.ps.model.workinstructions.web.action.WorkinstructionsAction" name="workinstructionsForm"
+			scope="request" input="search" parameter="method" unknown="false" validate="false">
+			<forward name="defaultwork" path="/ps/model/workinstructions/workinstructions.jsp" />
+
+			<forward name="tiaozhuan" path="/ps/model/workinstructions/newname.jsp" />
+			<forward name="add" path="/ps/model/workinstructions/add.jsp" />
+			<forward name="updatebefore" path="/ps/model/workinstructions/selectcontext.jsp" />
+			<forward name="selectinfo" path="/ps/model/workinstructions/selectinfo.jsp" />
+			<forward name="selectinfolist" path="/ps/model/workinstructions/selectinfolist.jsp" />
+
+			<forward name="edittree" path="/ps/model/workinstructions/edittree.jsp" />
+			<forward name="editinfo" path="/ps/model/workinstructions/editinfo.jsp" />
+			<forward name="getRightdefaultwork" path="/ps/model/common/RightWorkInstructions.jsp" />
+			<forward name="selectuserinfo" path="/userinfo.jsp" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/funconfigAction" type="com.krm.ps.model.funconfig.web.action.FunconfigAction"
+			name="FunconfigForm" scope="request" input="search" parameter="method" unknown="false" validate="false">
+			<forward name="selectfunconfiglist" path="/ps/model/sysmanage/funconfig/selectfunconfiglist.jsp" />
+			<forward name="add" path="/ps/model/sysmanage/funconfig/add.jsp" />
+			<forward name="openwindow" path="/ps/model/sysmanage/funconfig/openwindow.jsp" />
+			<forward name="editfunconfig" path="/ps/model/sysmanage/funconfig/selectfunconfiglist.jsp" />
+			<forward name="error" path="/error.jsp" />
+		</action>
+
+		<action path="/sysLog" type="com.krm.ps.model.sysLog.web.action.SysLogAction" name="sysLogForm" scope="request"
+			input="enter" parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/ps/model/syslog/queryLogList.jsp" />
+		</action>
+		<action path="/showBirt" type="com.krm.ps.birt.ShowBirtAction" name="" scope="request" input="enter"
+			parameter="method" unknown="false" validate="false">
+			<forward name="searchbirt" path="/reports/reportDataList.jsp" />
+			<forward name="showbirt" path="/reports/showbirt.jsp" />
+		</action>
+	</action-mappings>
+
+	<controller nocache="true" inputForward="true" maxFileSize="50M" />
+
+	<message-resources parameter="ApplicationResources" />
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/classes/validator-rules.xml,/WEB-INF/classes/validator-rules-custom.xml,/WEB-INF/classes/validation.xml" />
+	</plug-in>
+
+</struts-config>

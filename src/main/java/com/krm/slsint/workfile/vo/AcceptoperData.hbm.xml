@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.slsint.workfile.vo.AcceptoperData"
+        table="info_acceptoper"
+    >
+
+        <id
+            name="pkId"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">info_acceptoper_pkid_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-AcceptoperData.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="rmailId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="rmail_id"
+        />
+
+        <property
+            name="reply"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="reply"
+        />
+
+        <property
+            name="mailId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="mail_id"
+        />
+
+        <property
+            name="aoperId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="a_operid"
+        />
+
+        <property
+            name="adate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="a_date"
+        />
+
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="replyDate"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="replydate"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-AcceptoperData.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

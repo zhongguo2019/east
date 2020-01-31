@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.reportdefine.vo.ReportItem"
+        table="code_rep_item"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">code_rep_item_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-ReportItem.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="dataType"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="data_type"
+        />
+
+        <property
+            name="conCode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="con_code"
+        />
+
+        <property
+            name="endDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="end_date"
+        />
+
+        <property
+            name="frequency"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="frequency"
+        />
+
+        <property
+            name="beginDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="begin_date"
+        />
+
+        <property
+            name="code"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="code"
+        />
+
+        <property
+            name="createDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="create_date"
+        />
+
+        <property
+            name="isCollect"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="is_collect"
+        />
+
+        <property
+            name="isLeaf"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="is_leaf"
+        />
+
+        <property
+            name="isOrgCollect"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="is_org_collect"
+        />
+
+        <property
+            name="itemName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="item_name"
+        />
+
+        <property
+            name="itemOrder"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="item_order"
+        />
+
+        <property
+            name="reportId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="report_id"
+        />
+
+        <property
+            name="status"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="superId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="super_id"
+        />
+
+        <property
+            name="editDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="edit_date"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-ReportItem.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+<!--/ps   改成成       /template/tianjin  -->
+<!--/frMain.jsp  改成成   /template/tianjin/frMain.jsp -->
+<!--/frmenu.jsp  改成成   /template/tianjin/frmenu.jsp -->
+<!--/error.jsp  改成成   /template/tianjin/error.jsp -->
+<!--/fmDialog.jsp  改成成   /template/tianjin/fmDialog.jsp  -->
+
+
+	<!-- ========== Data Sources Definitions =================================== -->
+	<!-- Define your Struts data sources in a file called struts-data-sources.xml 
+		and place it in your merge directory. -->
+
+	<!-- ========== Form Bean Definitions ================================== -->
+	<form-beans>
+	    <form-bean name="logForm" type="com.krm.ps.sysmanage.usermanage.web.form.LogForm" />
+        <form-bean name="userForm"
+			type="com.krm.ps.sysmanage.usermanage.web.form.UserForm" />
+	    <form-bean name="roleForm"
+			type="com.krm.ps.sysmanage.usermanage.web.form.roleForm" />
+		<form-bean name="organForm"
+			type="com.krm.ps.sysmanage.organmanage.web.form.OrganForm" />
+		 <form-bean name="organTreeForm"
+			type="com.krm.ps.sysmanage.organmanage2.web.form.OrganTreeForm" />
+	    <form-bean name="groupReportForm"
+			type="com.krm.ps.sysmanage.groupmanage.web.form.GroupReportForm" />
+	    <form-bean name="reportConfigForm"
+			type="com.krm.ps.sysmanage.reportdefine.web.form.ReportConfigForm" />
+		<form-bean name="dictionaryForm"
+			type="com.krm.ps.framework.common.dictionary.web.form.DictionaryForm" />
+		<form-bean name="sortForm"
+			type="com.krm.ps.framework.common.sort.web.form.SortForm" />
+	    <form-bean name="sysInitForm"
+			type="com.krm.ps.sysmanage.organmanage.web.form.SysInitForm" />
+		<form-bean name="userReportForm"
+			type="com.krm.ps.sysmanage.usermanage.web.form.UserReportForm" />	
+				<!-- =================chm===================== -->
+		<form-bean name="reportTypeForm" type="com.krm.ps.model.reportdefine.web.form.ReportTypeForm" />
+		<form-bean name="reportTargetForm" type="com.krm.ps.model.reportdefine.web.form.ReportTargetForm" />
+		<form-bean name="reportForm" type="com.krm.ps.model.reportdefine.web.form.ReportForm" />
+		<form-bean name="dataValidationForm" type="com.krm.ps.model.datavalidation.web.form.ReportViewForm" />
+		<form-bean name="repFlFomatForm" type="com.krm.ps.model.repfile.web.form.RepFlFomatForm" />	
+		<form-bean name="reportViewForm" type="com.krm.ps.model.reportview.web.form.ReportViewForm" />
+		<form-bean name="xlsInitForm0" type="com.krm.ps.model.datafill.web.form.XLSInitForm0" />
+		<form-bean name="xlsInitForm" type="com.krm.ps.model.xlsinit.web.form.XLSInitForm" />
+		
+		<!-- <form-bean name="excelForm" type="com.krm.ps.model.datafill.vo.excelForm" /> -->
+		
+		<!--   qwk  -->
+		<form-bean name="reportDataForm"
+			type="com.krm.ps.model.datafill.web.form.ReportDataForm" />
+		<form-bean name="reportViewForm"
+			type="com.krm.ps.model.datafill.web.form.ReportViewForm" />
+		<form-bean name="studentLoanForm"
+			type="com.krm.ps.model.datafill.web.form.StudentLoanForm" />	
+			
+		<form-bean name="ktrForm"
+			type="com.krm.ps.model.repfile.web.form.KtrForm" />
+		<form-bean name="queryDzFrom"
+			type="com.krm.ps.model.east1104dz.web.from.QueryDzFrom" />	
+			<form-bean name="workinstructionsForm" 
+			type="com.krm.ps.model.workinstructions.web.form.WorkinstructionsForm"/>
+	</form-beans>
+
+	<!-- ========== Global Exceptions Definitions =================================== -->
+	<!-- <global-exceptions>
+		<exception type="java.lang.Exception" key="errors.general"
+			path="/error.jsp" handler="com.krm.ps.framework.common.web.action.ActionExceptionHandler" />
+	</global-exceptions> -->
+
+	<!-- ========== Global Forward Definitions =================================== -->
+	<global-forwards>
+		<forward name="tree" path="/ps/uitl/krmtree/tree.jsp" />
+		<forward name="loginpage" path="/loginAction.do?method=enterLogin"
+			redirect="false" />
+	</global-forwards>
+
+	<!-- ========== Action Mapping Definitions =====wfb============================== -->
+	<action-mappings>
+	<action path="/loginAction" type="com.krm.ps.sysmanage.usermanage.web.action.LoginAction"
+			name="logForm" scope="request" input="edit" parameter="method"
+			unknown="false" validate="false">
+			<forward name="logpage" path="/logpage.jsp" redirect="false" />
+			<forward name="pass" path="/template/tianjin/frMain.jsp" redirect="false" />
+			<forward name="home" path="/home.jsp" redirect="false" />
+			<forward name="updatePassword" path="/template/tianjin/fmDialog.jsp" redirect="false" />
+			<forward name="zhbslogtop" path="/plat/zhbs/top.jsp" redirect="false" />
+			<forward name="logtop" path="/top.jsp" redirect="false" />
+			<forward name="searchmain" path="/template/tianjin/frMain.jsp" redirect="false" />
+			<forward name="ZHBSsearchmain" path="/plat/zhbs/krm_zhbs.jsp" redirect="false" />
+			<forward name="logpagerhbz" path="/template/tianjin/login.jsp" redirect="false" />
+			<forward name="logpagekhfx" path="/template/tianjin/login.jsp" redirect="false" />
+			<forward name="logpageyjh" path="/template/tianjin/login.jsp" redirect="false" />
+		</action>
+	    <!--以下是系统管理菜单的功能菜单项-->	
+	    <action path="/userAction" type="com.krm.ps.sysmanage.usermanage.web.action.UserAction"
+			name="userForm" scope="request" parameter="method" unknown="false"
+			validate="false">
+			<forward name="beforeadd" path="/template/tianjin/model/sysmanage/usermanage/searchBeforeAdd.jsp"/>
+			<forward name="edit" path="/template/tianjin/model/sysmanage/usermanage/userForm.jsp" redirect="false" />
+			<forward name="list" path="/template/tianjin/model/sysmanage/usermanage/userList.jsp" redirect="false" />
+			<forward name="fmDialog" path="/template/tianjin/fmDialog.jsp" redirect="false" />
+			<forward name="userlistref" path="/template/tianjin/model/sysmanage/usermanage/userlistref.jsp" redirect="false" />
+			<forward name="refuser" path="/template/tianjin/model/sysmanage/usermanage/refuser.jsp" redirect="false" />
+			<forward name="pass" path="/template/tianjin/frMain.jsp" redirect="false" />
+		</action>
+		<action path="/userRoleAction"
+			type="com.krm.ps.sysmanage.usermanage.web.action.UserRoleAction" name="roleForm"
+			scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/template/tianjin/model/sysmanage/usermanage/userrole.jsp"
+				redirect="false" />
+			<forward name="roleForm" path="/template/tianjin/model/sysmanage/usermanage/roleForm.jsp"
+				redirect="false" />
+		</action>
+	    <action path="/organAction"
+			type="com.krm.ps.sysmanage.organmanage.web.action.OrganAction" name="organForm"
+			scope="request" input="edit" parameter="method" unknown="false"
+			validate="false">
+			<forward name="edit" path="/template/tianjin/model/sysmanage/organmanage/organForm.jsp"
+				redirect="false" />
+			<forward name="list" path="/template/tianjin/model/sysmanage/organmanage/organList.jsp"
+				redirect="false" />
+			<forward name="sort" path="/ps/uitl/krmtree/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/organAction.do?method=list"
+				redirect="false" />
+			<forward name="syncorgan" path="/template/tianjin/model/sysmanage/organmanage/syncOrgan.jsp"
+				redirect="false" />
+		
+		</action>
+	    <action path="/groupReportAction"
+			type="com.krm.ps.sysmanage.groupmanage.web.action.GroupReportAction" name="groupReportForm"
+			scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/template/tianjin/model/groupmanage/groupManageList.jsp"
+				redirect="false" />
+			<forward name="editGroupReport" path="/template/tianjin/model/groupmanage/groupReport.jsp"
+				redirect="false" />
+			<forward name="addGroupReport" path="/template/tianjin/model/groupmanage/addGroupReport.jsp"
+				redirect="false" />
+			<forward name="deleteError" path="/template/tianjin/model/groupmanage/deleteError.jsp"
+				redirect="false" />
+			<forward name="showGroupUsers" path="/template/tianjin/model/groupmanage/showGroupUsers.jsp"
+				redirect="false" />
+			<forward name="showGroupPurview" path="/template/tianjin/model/groupmanage/showGroupPurview.jsp"
+				redirect="false" />
+			<forward name="sort" path="/ps/uitl/krmtree/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/groupReportAction.do?method=list"
+				redirect="false" />
+		</action>
+		<action path="/dicAction" type="com.krm.slsint.organmanage.web.action.DicAction"
+			parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/dictionary/dicList.jsp" redirect="false" />
+			<forward name="sublist" path="/dictionary/subdicList.jsp"
+				redirect="false" />
+			<forward name="edit" path="/dictionary/dicedit.jsp" redirect="false" />
+		</action>
+		<action path="/reportConfigAction"
+			type="com.krm.ps.sysmanage.reportdefine.web.action.ReportConfigAction"
+			name="reportConfigForm" scope="request" input="edit" parameter="method"
+			unknown="false" validate="false">
+			<forward name="edit" path="/template/tianjin/model/reportdefine/reportConfigForm.jsp"
+				redirect="false" />
+			<forward name="list" path="/template/tianjin/model/reportdefine/reportConfigList.jsp"
+				redirect="false" />
+			<forward name="editrisk" path="/template/tianjin/model/reportdefine/editrisk.jsp"
+				redirect="false" />
+			<forward name="showorgan" path="/template/tianjin/model/reportdefine/organ.jsp"
+				redirect="false" />
+			<forward name="config12" path="/template/tianjin/model/reportdefine/configList.jsp"
+				redirect="false" />
+			<forward name="configedit" path="/template/tianjin/model/reportdefine/configForm.jsp"
+				redirect="false" />
+		</action>
+		<action path="/menu" type="com.krm.ps.sysmanage.usermanage.web.action.MenuAction"
+			unknown="false" validate="false">
+			<forward name="success" path="/template/tianjin/frmenu.jsp" redirect="false" />
+			<forward name="ZHBSmenu" path="/plat/zhbs/frmenu.jsp"
+				redirect="false" />
+			<forward name="gotop" path="/menubar.jsp" redirect="false" />
+		</action>
+		<action path="/organTreeAction"
+			type="com.krm.ps.sysmanage.organmanage2.web.action.OrganTreeAction" name="organTreeForm"
+			scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="beforeadd" path="/ps/uitl/krmtree/tree.jsp" 
+				redirect="false"/>
+			<forward name="list" path="/template/tianjin/model/sysmanage/organTreeManage/viewOrganTree.jsp"
+				redirect="false" />
+			<forward name="edit" path="/template/tianjin/model/sysmanage/organTreeManage/organTreeForm.jsp"
+				redirect="false" />
+			<forward name="new" path="/template/tianjin/model/sysmanage/organTreeManage/organTreeForm.jsp"
+				redirect="false" />
+			<forward name="copy" path="/template/tianjin/model/sysmanage/organTreeManage/organTreeForm.jsp"
+				redirect="false" />
+			<forward name="tree" path="/ps/uitl/krmtree/tree.jsp" redirect="false" />
+			<forward name="sort" path="/ps/uitl/krmtree/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/organTreeAction.do?method=list"
+				redirect="false" />
+			<forward name="viewtree" path="/template/tianjin/model/sysmanage/organTreeManage/organTree.jsp"
+				redirect="false" />
+		</action>
+		<action path="/DictionaryAction"
+			type="com.krm.ps.sysmanage.usermanage.web.action.DictionaryAction" name="dictionaryForm"
+			scope="request" input="dictionary" parameter="method" unknown="false"
+			validate="false">
+			<forward name="dictionary" path="/template/tianjin/model/sysmanage/usermanage/Dictionary.jsp"
+				redirect="false" />
+			<forward name="inanition" path="/inanition.jsp" redirect="false" />
+		</action>
+		<action path="/sortAction" type="com.krm.ps.framework.common.sort.web.action.SortAction"
+			name="sortForm" scope="request" input="view" parameter="method"
+			unknown="false" validate="false">
+			<forward name="view" path="/ps/uitl/krmtree/uploadForm.jsp" redirect="false" />
+		</action>
+		<action path="/dicAction" type="com.krm.ps.sysmanage.organmanage.web.action.DicAction"
+			parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/template/tianjin/model/dictionary/dicList.jsp" redirect="false" />
+			<forward name="sublist" path="/template/tianjin/model/dictionary/subdicList.jsp"
+				redirect="false" />
+			<forward name="edit" path="/template/tianjin/model/dictionary/dicedit.jsp" redirect="false" />
+		</action>
+		<action path="/treeAction"
+			type="com.krm.ps.sysmanage.organmanage2.web.action.TreeAction" parameter="method"
+			unknown="false" validate="false">
+			<forward name="tree" path="/ps/uitl/krmtree/tree.jsp" redirect="false" />
+		</action>
+		<action path="/sysInitAction"
+			type="com.krm.ps.sysmanage.organmanage.web.action.SysInitAction" name="sysInitForm"
+			scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="initform" path="/template/tianjin/model/sysmanage/organmanage/sysinit.jsp"
+				redirect="false" />
+		</action>
+		<action path="/userReportAction"
+			type="com.krm.ps.sysmanage.usermanage.web.action.UserReportAction" name="userReportForm"
+			scope="request" parameter="method" unknown="false" validate="false">
+			<forward name="list" path="/template/tianjin/model/sysmanage/usermanage/userList.jsp"
+				redirect="false" />
+			<forward name="editUserReport" path="/template/tianjin/model/sysmanage/usermanage/userReport.jsp"
+				redirect="false" />
+			<forward name="list" path="/template/tianjin/model/sysmanage/usermanage/userList.jsp"
+				redirect="false" />
+		</action>
+		
+		<!-- =====================================chm========================================= -->
+		<action path="/reportTypeAction"
+			type="com.krm.ps.model.reportdefine.web.action.ReportTypeAction" name="reportTypeForm"
+			scope="request" input="edit" parameter="method" unknown="false"
+			validate="false">
+			<forward name="list" path="/template/tianjin/model/reportdefine/reportTypeList.jsp" redirect="false" />
+			<forward name="edit" path="/template/tianjin/model/reportdefine/reportTypeForm.jsp" redirect="false" />
+			<forward name="sort" path="/template/tianjin/model/reportdefine/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/reportTypeAction.do?method=list" redirect="false" />
+		</action>
+
+		<action path="/reportAction"
+			type="com.krm.ps.model.reportdefine.web.action.ReportAction" name="reportForm"
+			scope="request" input="edit" parameter="method" unknown="false"
+			validate="false">
+			<forward name="edit" path="/template/tianjin/model/reportdefine/reportForm.jsp" redirect="false" />
+			<forward name="search" path="/template/tianjin/model/reportdefine/reportSearchForm.jsp" redirect="false" />
+			<forward name="list" path="/template/tianjin/model/reportdefine/reportList.jsp" redirect="false" />
+			<forward name="listUndeleteable" path="/formulaDefine.do?method=listUndeleteableFormulas" redirect="false" />
+			<forward name="sort" path="/template/tianjin/model/reportdefine/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/reportAction.do?method=list" redirect="false" />
+			<forward name="author" path="/template/tianjin/model/reportdefine/reportAuthor.jsp" redirect="false" />
+		</action>
+		
+		<action path="/reportTargetAction"
+			type="com.krm.ps.model.reportdefine.web.action.ReportTargetAction"
+			name="reportTargetForm" scope="request" input="edit" parameter="method"
+			unknown="false" validate="false">
+			<forward name="edit" path="/template/tianjin/model/reportdefine/reportTargetForm.jsp" redirect="false" />
+			<forward name="list" path="/template/tianjin/model/reportdefine/reportTargetList.jsp" redirect="false" />
+			<forward name="targetUI" path="/template/tianjin/model/reportdefine/targetManage.jsp" redirect="false" />
+			<forward name="targesendtUI" path="/template/tianjin/model/reportdefine/targetSendManage.jsp" redirect="false" />	
+			<forward name="listUndeleteable" path="/formulaDefine.do?method=listUndeleteableFormulas" redirect="false" />
+			<forward name="sort" path="/template/tianjin/model/reportdefine/sortcommon.jsp" redirect="false" />
+			<forward name="sort_list" path="/reportTargetAction.do?method=list" redirect="false" />
+		</action>
+		
+		<action path="/datavalidation"
+			type="com.krm.ps.model.datavalidation.web.action.ReportRuleAction" name="dataValidationForm"
+			scope="request" input="enter" parameter="method" unknown="false"
+			validate="false">
+			<forward name="comlogicrule" path="/template/tianjin/model/datavalidation/com_logicrule.jsp" redirect="false"></forward>
+		</action>
+		
+		<action path="/repFileAction"
+			type="com.krm.ps.model.repfile.web.action.RepFileAction" name="repFlFomatForm"
+			scope="request" input="enter" parameter="method" unknown="false"
+			validate="false">
+		<forward name="createfileSearch" path="/template/tianjin/model/repfile/createfileSearch.jsp" redirect="false"></forward>
+		<forward name="downloadfileList" path="/template/tianjin/model/repfile/downloadfileList.jsp" redirect="false" ></forward>
+		<forward name="createfileprompt" path="/template/tianjin/model/repfile/createfileprompt.jsp" redirect="false" ></forward>
+		<forward name="reportlistName" path="/template/tianjin/model/repfile/createfileSearch.jsp" redirect="false" ></forward>
+		<forward name="openKettle" path="/template/tianjin/model/repfile/openKettle.jsp" redirect="false" />
+		<forward name="openattach" path="/template/tianjin/model/repfile/openattach.jsp" redirect="false" />
+		</action>
+		
+		<action path="/reportView"
+			type="com.krm.ps.model.reportview.web.action.ReportViewAction" name="reportViewForm"
+			scope="request" input="search" parameter="method" unknown="false"
+			validate="false">
+			<forward name="search" path="/template/tianjin/model/reportview/reportSearchForm.jsp"
+				redirect="false" />
+			
+			<forward name="view" path="/template/tianjin/model/reportview/reportFileView.jsp"
+				redirect="false" />
+			
+			<forward name="tree" path="/template/tianjin/model/reportview/tree.jsp" redirect="false" />
+			
+			
+			
+		</action>
+		
+		<action path="/xlsInit0" type="com.krm.ps.model.datafill.web.action.XLSInitAction0"
+			name="xlsInitForm0" scope="request" input="search" parameter="method"
+			unknown="false" validate="false">
+			<forward name="xlslsint" path="/template/tianjin/model/datafill/xlinputdata0.jsp" />
+		</action>
+		
+		<action path="/xlsInit" type="com.krm.ps.model.xlsinit.web.action.XLSInitAction"
+			name="xlsInitForm" scope="request" input="search" parameter="method"
+			unknown="false" validate="false">
+			<forward name="search" path="/template/tianjin/model/xlsinit/xlsinit.jsp" redirect="false" />
+			<forward name="init" path="/template/tianjin/model/xlsinit/xlsinit.jsp" redirect="false" />
+			<forward name="xlslsint" path="/template/tianjin/model/xlsinit/xlinputdata.jsp" />
+			
+			
+		</action>
+		
+		
+			<!-- =====================================new jsp=========================================== -->
+		<!-- 配制规则 开始 -->
+		<action path="/reportrule"
+			type="com.krm.ps.model.reportrule.web.action.ReportRuleAction" name="reportViewForm"
+			scope="request" input="enter" parameter="method" unknown="false"
+			validate="false">
+			<forward name="enterbasicrule" path="/template/tianjin/model/reportrule/enter_basicrule.jsp"
+				redirect="false"></forward>
+			<forward name="enterprirule" path="/template/tianjin/model/reportrule/enter_privaterule.jsp"
+				redirect="false"></forward>
+			<forward name="editbasicrule" path="/template/tianjin/model/reportrule/edit_basicrule.jsp"
+				redirect="false"></forward>
+			<forward name="editprirule" path="/template/tianjin/model/reportrule/edit_privaterule.jsp"
+				redirect="false"></forward>	
+			<forward name="editdefrule" path="/template/tianjin/model/reportrule/edit_defaultrule.jsp"
+				redirect="false"></forward>
+			<forward name="listbasicrule" path="/template/tianjin/model/reportrule/list_basicrule.jsp"
+				redirect="false"></forward>
+			<forward name="listprirule" path="/template/tianjin/model/reportrule/list_privaterule.jsp"
+				redirect="false"></forward>
+			<forward name="listbasicruledetail" path="/template/tianjin/model/reportrule/list_detailbasicrule.jsp"
+				redirect="false"></forward>
+			<forward name="listpriruledetail" path="/template/tianjin/model/reportrule/list_detailprirule.jsp"
+				redirect="false"></forward>
+		</action>
+		
+		<action path="/integratedQuery"
+			type="com.krm.ps.model.reportrule.web.action.IntegratedQueryAction"
+			name="integratedQueryForm" scope="request" input="queryForm"
+			parameter="method" unknown="false" validate="false">
+		</action>
+		<!-- 配制规则 结束 -->
+		<!-- 灵活查询 -->
+		<action path="/flexiblequery"
+			type="com.krm.ps.model.flexiblequery.web.action.QueryAction" name="reportDataForm"
+			scope="request" input="enter" parameter="method" unknown="false"
+			validate="false">
+		    <forward name="enterreportdataresult" path="/template/tianjin/model/flexiblequery/reportDataList.jsp" />
+		    <forward name="error" path="/template/tianjin/error.jsp"/>
+		</action>
+		<!-- 灵活查询 结束 -->
+    	<!-- 业务数据补录 -->
+		<action path="/datafillreportView"
+			type="com.krm.ps.model.datafill.web.action.ReportViewAction" name="reportViewForm"
+			scope="request" input="search" parameter="method" unknown="false"
+			validate="false">
+			<forward name="search1" path="/template/tianjin/model/datafill/reportSearchForm.jsp"
+				redirect="false" />
+			<forward name="search2" path="/template/tianjin/model/datafill/reportEditForm.jsp"
+				redirect="false" />
+			<forward name="searchDatafill1" path="/template/tianjin/model/datafill/reportSearchForm1.jsp"
+				redirect="false" />
+		    <forward name="searchDatafill" path="/template/tianjin/model/datafill/reportSearchForm.jsp"
+				redirect="false" />
+				</action>
+		<action path="/dataFill"
+			type="com.krm.ps.model.datafill.web.action.DataFillAction" name="reportDataForm"
+			scope="request" input="search" parameter="method" unknown="false"
+			validate="false">
+		    <forward name="editUI" path="/template/tianjin/model/datafill/reportDataEdit.jsp" />
+			<forward name="editUI2" path="/template/tianjin/model/datafill/reportDataInputEdit.jsp" />
+			<forward name="editUI2bug" path="/template/tianjin/model/datafill/reportDataInputEditbug.jsp" />
+			<forward name="enterreportdataresultde" path="/template/tianjin/model/datafill/reportDataList.jsp" />
+			<forward name="importDataOne" path="/template/tianjin/model/datafill/importDataOne.jsp" />
+			<forward name="editOneUI2" path="/template/tianjin/model/datafill/editOneData2.jsp" />
+			<forward name="error" path="/template/tianjin/error.jsp"/>
+			<forward name="reportguide" path="/template/tianjin/model/datafill/reportGuide.jsp" />
+			<forward name="reportguideDetailed" path="/template/tianjin/model/datafill/reportGuideDetail.jsp" />
+			<forward name="reportList" path="/template/tianjin/model/datafill/reportList.jsp" />
+			<forward name="importDataFromXls" path="/template/tianjin/model/datafill/xlinputdata.jsp" />
+			<forward name="xlinputdata" path="/template/tianjin/model/datafill/xlinputdata.jsp" />
+			<forward name="Leftreportguide" path="/template/tianjin/model/common/LeftReportGuide.jsp" />
+			<forward name="reportMove" path="/template/tianjin/model/datafill/reportmove.jsp" />
+		</action>
+		
+		<!-- <action path="/excelUpload"
+			type="com.krm.ps.model.datafill.web.action.DataFillAction" name="excelForm"
+			scope="request" input="search" parameter="method" unknown="false"
+			validate="false">
+		    
+			<forward name="openattach" path="/template/tianjin/model/datafill/openattach.jsp" />
+		</action> -->
+		
+		
+		<action path="/querydz"
+			type="com.krm.ps.model.east1104dz.web.action.QueryDzAction" name="queryDzFrom"
+			scope="request" input="search" parameter="method" unknown="false"
+			validate="false">
+		    <forward name="queryorgandate" path="/template/tianjin/model/east1104dz/east1104dz.jsp" />
+		    <forward name="east1104list" path="/template/tianjin/model/east1104dz/east1104list.jsp" />
+	    </action>
+		
+		<action path="/studentLoan"
+			type="com.krm.ps.model.datafill.web.action.StudentLoanAction" name="studentLoanForm"
+			scope="request" input="edit" parameter="method" unknown="false"
+			validate="false">
+		</action>
+				<action path="/workinstructionsAction"
+			type="com.krm.ps.model.workinstructions.web.action.WorkinstructionsAction" name="workinstructionsForm"
+			scope="request" input="search" parameter="method" unknown="false"
+			validate="false">
+			 <forward name="defaultwork" path="/template/tianjin/model/workinstructions/workinstructions.jsp" />
+			
+			 <forward name="tiaozhuan" path="/template/tianjin/model/workinstructions/newname.jsp" />
+			  <forward name="add" path="/template/tianjin/model/workinstructions/add.jsp" />
+			  <forward name="updatebefore" path="/template/tianjin/model/workinstructions/selectcontext.jsp" />
+			  <forward name="selectinfo" path="/template/tianjin/model/workinstructions/selectinfo.jsp" />
+			  <forward name="selectinfolist" path="/template/tianjin/model/workinstructions/selectinfolist.jsp" />
+
+			   <forward name="edittree" path="/template/tianjin/model/workinstructions/edittree.jsp" />
+ 				<forward name="editinfo" path="/template/tianjin/model/workinstructions/editinfo.jsp" />
+			  <forward name="getRightdefaultwork" path="/template/tianjin/model/common/RightWorkInstructions.jsp" />
+			<forward name="selectuserinfo" path="/userinfo.jsp" />
+		</action>
+		<!-- 业务数据补录 end -->	
+	</action-mappings>
+
+
+	<controller nocache="true" inputForward="true" maxFileSize="50M" />
+
+	<message-resources parameter="ApplicationResources" />
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/classes/validator-rules.xml,
+	                             /WEB-INF/classes/validator-rules-custom.xml,
+	                             /WEB-INF/classes/validation.xml" />
+	</plug-in>
+
+</struts-config>

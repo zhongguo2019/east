@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.vo.ReportRule"
+        table="code_rep_rule"
+    >
+
+        <id
+            name="rulecode"
+            column="RULECODE"
+            type="java.lang.String"
+        >
+        </id>
+       
+ <property
+            name="rangelevel"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="RANGELEVEL"
+        />
+ <property
+            name="key1"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="key1"
+        />
+        <property
+            name="pcheck"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="p_check"
+        />
+         <property
+            name="rcontent"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="r_content"
+        />
+         <property
+            name="pflag"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="pflag"
+        />
+         <property
+            name="key2"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="key2"
+        />
+         <property
+            name="key3"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="key3"
+        />
+        <property
+            name="modelid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="model_id"
+        />
+         <property
+            name="systemcode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="systemcode"
+        />
+         <property
+            name="flag"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="FLAG"
+        />
+
+        <property
+            name="targetid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Target_id"
+        />
+        <property
+            name="targetname"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="target_name"
+        />
+    
+     <property
+            name="rulemsg"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Rulemsg"
+        />
+        <property
+            name="targettable"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="TargetTable"
+        />
+    
+
+        <property
+            name="content"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="content"
+        />
+        <property
+            name="contentdes"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Content_des"
+        />
+    
+        <property
+            name="cstatus"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="cStatus"
+        />
+         <property
+            name="keyid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Keyid"
+        />
+        
+        <property
+            name="rtype"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Rtype"
+        />
+       
+        <property
+            name="groupid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Group_id"
+        />
+         
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

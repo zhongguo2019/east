@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.slsint.common.vo.GeneralAccessory"
+        table="common_accessory"
+    >
+
+        <id
+            name="accessoryId"
+            column="accessoryid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">common_accessory_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-GeneralAccessory.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="createTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="createtime"
+        />
+
+        <property
+            name="dispOrder"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="disporder"
+        />
+
+        <property
+            name="editTime"
+            type="java.util.Date"
+            update="true"
+            insert="true"
+            column="edittime"
+        />
+
+        <property
+            name="entityId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="entityid"
+        />
+
+        <property
+            name="entityKind"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="entitykind"
+        />
+
+        <property
+            name="extName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="extname"
+        />
+
+        <property
+            name="originalName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="originalname"
+        />
+
+        <property
+            name="randomName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="randomname"
+        />
+
+        <property
+            name="status"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="title"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="title"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-GeneralAccessory.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

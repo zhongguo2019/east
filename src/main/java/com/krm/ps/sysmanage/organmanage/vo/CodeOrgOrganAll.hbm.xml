@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.organmanage.vo.CodeOrgOrganAll"
+        table="code_org_organ_all"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Integer"
+        >
+            <generator class="native">
+                <param name="sequence">code_org_organ_seq</param>
+              <!--  native
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-OrganInfo.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="code"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="code"
+        />
+
+        <property
+            name="super_id"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="super_id"
+        />
+
+       
+
+
+        <property
+            name="full_name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="full_name"
+        />
+
+        <property
+            name="short_name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="short_name"
+        />
+        
+         <property
+            name="organ_type"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="organ_type"
+        />
+        
+         <property
+            name="business_type"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="business_type"
+        />
+        
+         <property
+            name="dummy_type"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="dummy_type"
+        />
+        
+         <property
+            name="peak"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="peak"
+        />
+        
+         <property
+            name="postalcode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="postalcode"
+        />
+        
+        <property
+            name="phone"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="phone"
+        />
+        
+        <property
+            name="adder"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="adder"
+        />
+        
+        <property
+            name="delegate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="delegate"
+        />
+        
+
+        <property
+            name="del_mobile"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="del_mobile"
+        />
+
+        <property
+            name="del_phone"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="del_phone"
+        />
+
+        <property
+            name="del_other"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="del_other"
+        />
+
+        <property
+            name="status"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="description"
+        />
+
+        <property
+            name="begin_date"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="begin_date"
+        />
+
+        <property
+            name="end_date"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="end_date"
+        />
+
+        <property
+            name="create_date"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="create_date"
+        />
+
+        <property
+            name="creator"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="creator"
+        />
+
+        <property
+            name="organ_order"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="organ_order"
+        />
+        <property
+            name="inst_level"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="INST_LEVEL"
+        />
+          <property
+            name="creunit_no"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="CREUNIT_NO"
+        />
+          <property
+            name="inst_parent_name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="INST_PARENT_NAME"
+        />
+          <property
+            name="inst_parent_no"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="INST_PARENT_NO"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-OrganInfo.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

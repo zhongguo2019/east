@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.vo.ReportResult"
+        table="code_rep_result"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">code_rep_result_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Dictionary.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+        
+         <property
+            name="rulecode"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Rulecode"
+        />
+        
+         <property
+            name="modelid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="model_id"
+        />
+              
+           
+         <property
+            name="targetname"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Target_name"
+        />
+         <property
+            name="rangelevel"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="rangelevel"
+        />
+         <property
+            name="rtype"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Rtype"
+        />
+      <property
+            name="targetid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Target_id"
+        />
+      
+        <property
+            name="organid"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Organ_id"
+        />
+        <property
+            name="etldate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Etldate"
+        />
+
+
+        <property
+            name="editdate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="editdate"
+        />
+
+        <property
+            name="cstatus"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="cStatus"
+        />
+   
+ <property
+            name="rulemsg"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Rulemsg"
+        /> 
+         <property
+            name="rvalue"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="R_VALUE"
+        /> 
+         <property
+            name="dtype"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="D_TYPE"
+        /> 
+        <property
+            name="keyvalue"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="Keyvalue"
+        /> 
+        <property
+            name="oldvalue"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Oldvalue"
+        /> 
+        <property
+            name="newvalue"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Newvalue"
+        />
+         <property
+            name="oper"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="Oper"
+        />
+        
+         <property
+            name="keyvalue1"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="Keyvalue1"
+        /> 
+        
+         <property
+            name="keyvalue2"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="Keyvalue2"
+        /> 
+        
+         <property
+            name="keyvalue3"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="Keyvalue3"
+        /> 
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.framework.common.dictionary.vo.Dictionary"
+        table="code_dictionary"
+    >
+
+        <id
+            name="dicId"
+            column="dicid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">code_dictionary_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Dictionary.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="dicName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="dicname"
+        />
+
+        <property
+            name="parentId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="parentid"
+        />
+
+        <property
+            name="layer"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="layer"
+        />
+
+        <property
+            name="isLeaf"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="isleaf"
+        />
+
+        <property
+            name="dispOrder"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="disporder"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="description"
+        />
+
+        <property
+            name="modifyTime"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="modifytime"
+        />
+
+        <property
+            name="status"
+            type="java.lang.Integer"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Dictionary.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

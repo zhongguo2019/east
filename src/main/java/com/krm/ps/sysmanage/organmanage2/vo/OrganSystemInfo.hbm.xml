@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.organmanage2.vo.OrganSystemInfo"
+        table="code_user_org_idx"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Integer"
+        >
+            <generator class="native">
+                <param name="sequence">code_user_org_idx_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-OrganSystemInfo.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="name"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="name"
+        />
+
+        <property
+            name="userId"
+            type="int"
+            update="true"
+            insert="true"
+            column="userid"
+        />
+
+        <property
+            name="areaId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="areaid"
+        />
+
+        <property
+            name="groupId"
+            type="int"
+            update="true"
+            insert="true"
+            column="groupid"
+        />
+
+        <property
+            name="isPublic"
+            type="int"
+            update="true"
+            insert="true"
+            column="ispublic"
+        />
+
+        <property
+            name="beginDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="begin_date"
+        />
+
+        <property
+            name="endDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="end_date"
+        />
+
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="showOrder"
+            type="int"
+            update="true"
+            insert="true"
+            column="show_order"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="description"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-OrganSystemInfo.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

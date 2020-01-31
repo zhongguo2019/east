@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.organmanage2.vo.Area"
+        table="code_areas"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="int"
+        >
+            <generator class="native">
+                <param name="sequence">code_areas_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Area.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="beginDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="begin_date"
+        />
+
+        <property
+            name="code"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="code"
+        />
+
+        <property
+            name="description"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="description"
+        />
+
+        <property
+            name="endDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="end_date"
+        />
+
+        <property
+            name="fullName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="full_name"
+        />
+
+        <property
+            name="isDefult"
+            type="int"
+            update="true"
+            insert="true"
+            column="isdefult"
+        />
+
+        <property
+            name="shortName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="short_name"
+        />
+
+        <property
+            name="status"
+            type="int"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="superId"
+            type="int"
+            update="true"
+            insert="true"
+            column="super_id"
+        />
+
+        <property
+            name="showOrder"
+            type="int"
+            update="true"
+            insert="true"
+            column="show_order"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Area.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

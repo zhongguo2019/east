@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.reportdefine.vo.StrdReportWhecondition"
+        table="strd_report_whecondition"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">STRD_REPORT_WHECONDITION_SEQ</param>
+            </generator>
+        </id>
+        
+         <property
+            name="tempid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="TEMPID"
+        />
+        
+         <property
+            name="modeid"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="MODEID"
+        />
+        <property
+            name="whecondition"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="WHECONDITION"
+        />
+
+
+        <property
+            name="ismaintable"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ISMAINTABLE"
+        />
+         
+           <property
+            name="tablename"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="TABLENAME"
+        />
+        
+          <property
+            name="table"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="TABLAB"
+        />
+        
+    </class>
+
+</hibernate-mapping>

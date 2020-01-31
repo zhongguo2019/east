@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.usermanage.vo.PlatSysGp"
+        table="plat_sys_gp"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">umg_user_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-PlatSysGp.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="sysFlag"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="sys_flag"
+        />
+
+        <property
+            name="gpId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="gp_id"
+        />
+
+        <property
+            name="createDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="create_date"
+        />
+
+        <property
+            name="status"
+            type="char"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="flag"
+            type="char"
+            update="true"
+            insert="true"
+            column="flag"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-PlatSysGp.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

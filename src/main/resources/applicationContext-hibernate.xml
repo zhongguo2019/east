@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <!-- Hibernate SessionFactory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mappingResources">
+            <list>          
+                <!-- dictionary part start -->
+                <value>com/krm/ps/sysmanage/usermanage/vo/Dictionary.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/usermanage/vo/Esystem.hbm.xml</value> 
+                <value>com/krm/ps/sysmanage/usermanage/vo/Units.hbm.xml</value>                    
+                <!--dictionary part end -->
+                 
+                <!-- user vo -->
+                <value>com/krm/ps/sysmanage/usermanage/vo/User.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/usermanage/vo/UserDetail.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/usermanage/vo/Role.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/usermanage/vo/UserRole.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/usermanage/vo/UserReport.hbm.xml</value>
+               	<value>com/krm/ps/sysmanage/usermanage/vo/RoleRight.hbm.xml</value>
+                <!-- user vo end -->
+             
+                <!--  organ vo -->
+                <value>com/krm/ps/sysmanage/organmanage/vo/OrganInfo.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/organmanage/vo/OrganContrast.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/organmanage/vo/CodeOrgOrganAll.hbm.xml</value>
+                <!--  organ vo end -->
+                
+            
+                
+                <!-- organManage -->
+                <value>com/krm/ps/sysmanage/organmanage2/vo/Area.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/organmanage2/vo/OrganSystemInfo.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/organmanage2/vo/OrganTreeNode.hbm.xml</value>
+                 <!-- docsharemanage part start -->
+                <value>com/krm/ps/sysmanage/organmanage/vo/Department.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/organmanage/vo/UserDeptIdx.hbm.xml</value>
+                 <!-- report define vo-->
+                <value>com/krm/ps/sysmanage/reportdefine/vo/ReportOrgType.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/reportdefine/vo/ReportType.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/reportdefine/vo/ReportItem.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/reportdefine/vo/ReportTarget.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/reportdefine/vo/ReportConfig.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/reportdefine/vo/Report.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/reportdefine/vo/TableField.hbm.xml</value>
+                <value>com/krm/ps/sysmanage/reportdefine/vo/StrdReportWhecondition.hbm.xml</value>
+             <!-- ===================com/krm/ps/model/vo/ 下所有的  hbm.xml======================================== -->  
+                <value>com/krm/ps/model/vo/CurrencyInfo.hbm.xml</value>
+                <value>com/krm/ps/model/vo/DicItem.hbm.xml</value>      
+                <value>com/krm/ps/model/vo/FromValidator.hbm.xml</value> 
+                <value>com/krm/ps/model/vo/MapColumn.hbm.xml</value> 
+                <value>com/krm/ps/model/vo/RepFlfile.hbm.xml</value>
+               
+                <value>com/krm/ps/model/vo/RepFlFomat.hbm.xml</value>
+                <value>com/krm/ps/model/vo/RepFlRep.hbm.xml</value>
+                <value>com/krm/ps/model/vo/RepFlRepFiled.hbm.xml</value>
+                <value>com/krm/ps/model/vo/ReportComType.hbm.xml</value> 
+                <value>com/krm/ps/model/vo/ReportResult.hbm.xml</value>
+              
+                <value>com/krm/ps/model/vo/ReportRule.hbm.xml</value>
+                <value>com/krm/ps/model/vo/ReportTask.hbm.xml</value> 
+                <value>com/krm/ps/model/vo/Sysparam.hbm.xml</value>
+                <value>com/krm/ps/model/vo/TargetTemplate.hbm.xml</value>
+                <value>com/krm/ps/model/vo/TemplateModel.hbm.xml</value>
+                <value>com/krm/ps/model/vo/ChartModel.hbm.xml</value>
+                <value>com/krm/ps/model/vo/ReportFile.hbm.xml</value>
+                
+                <value>com/krm/ps/model/vo/Formula.hbm.xml</value>
+              <!-- ===================new  hbm.xml======================================== --> 
+                <value>com/krm/ps/model/datafill/vo/StatusForm.hbm.xml</value>
+                <value>com/krm/ps/model/vo/KettleData.hbm.xml</value>
+                <value>com/krm/ps/model/east1104dz/vo/East1104Dz.hbm.xml</value>
+
+                 <value>com/krm/ps/model/workinstructions/vo/Workinstructions.hbm.xml</value>
+                <value>com/krm/ps/model/workinstructions/vo/Workcontext.hbm.xml</value>
+                 <value>com/krm/ps/model/workinstructions/vo/Workaccessory.hbm.xml</value> 
+				
+            	<!-- <value>com/krm/ps/model/sysLog/vo/LogData.hbm.xml</value> -->
+            	
+            	<value>com/krm/slsint/workfile/vo/AcceptoperData.hbm.xml</value>
+                <value>com/krm/slsint/workfile/vo/FileTransferData.hbm.xml</value>
+                <value>com/krm/slsint/workfile/vo/WorkDirectData.hbm.xml</value>
+                <value>com/krm/slsint/workfile/vo/OleFileData.hbm.xml</value>
+                <!-- message -->
+                
+                <!-- fileData part start -->
+                <value>com/krm/slsint/fileRepositoryManage/vo/FileRepositoryRecord.hbm.xml</value>
+                <value>com/krm/slsint/directorEnquiries/vo/FileShareData.hbm.xml</value>
+				<value>com/krm/ps/tarsk/vo/Tarsk.hbm.xml</value>
+				<value>com/krm/ps/tarsk/vo/SubTarskInfo.hbm.xml</value>
+                <value>com/krm/ps/model/vo/CodeRepConfigure.hbm.xml</value>
+                <value>com/krm/ps/model/vo/CodeRepJhgz.hbm.xml</value>
+                <value>com/krm/ps/model/vo/CodeRepJhgzZf.hbm.xml</value>
+                <value>com/krm/ps/model/vo/CodeRepSubmitalist.hbm.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+        <props>
+            <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+            <prop key="hibernate.jdbc.batch_size">20</prop>
+             <!-- <prop key="hibernate.show_sql">true</prop>  -->
+            <!--  <prop key="hibernate.hbm2ddl.auto">update</prop>-->
+			<prop key="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</prop>
+		</props>
+		</property>
+		<property name="lobHandler">
+    		<bean class="com.krm.ps.util.UniversalLobHandler"/>
+		</property>	
+	</bean>
+	
+	
+	<!-- OrganDAO: Hibernate implementation -->
+    <bean id="organInfoDAO" class="com.krm.ps.sysmanage.organmanage.dao.hibernate.OrganInfoDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+    
+    <bean id="userDAO" class="com.krm.ps.sysmanage.usermanage.dao.hibernate.UserDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="organContrastDAO" class="com.krm.ps.sysmanage.organmanage.dao.hibernate.OrganContrastDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    	<property name="oiDAO" ref="organInfoDAO"/>
+	</bean>
+	 <bean id="areaDAO" class="com.krm.ps.sysmanage.organmanage2.dao.impl.AreaDAOImpl"> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+	 <bean id="dictionaryDAO" class="com.krm.ps.sysmanage.usermanage.dao.hibernate.DictionaryDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="userRoleDAO" class="com.krm.ps.sysmanage.usermanage.dao.hibernate.UserRoleDAOHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="organInfoDAO2" class="com.krm.ps.sysmanage.organmanage2.dao.impl.OrganInfoDAO2Impl"> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+	  <bean id="organTreeDAO" class="com.krm.ps.sysmanage.organmanage2.dao.impl.OrganTreeDAOImpl"> 
+		<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+	<!-- reportConfigDAO: Hibernate implementation -->
+    <bean id="reportConfigDAO" class="com.krm.ps.sysmanage.reportdefine.dao.hibernate.ReportConfigDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    	<property name="DAOJdbc" ref="DAOJdbc"/>
+	</bean>
+		<!-- ReportDefineDAO: Hibernate implementation -->
+    <bean id="reportDefineDAO" class="com.krm.ps.sysmanage.reportdefine.dao.hibernate.ReportDefineDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- new  qwk -->
+	<!--系统日志 -->
+	<bean id="syslogDAO" class="com.krm.ps.model.sysLog.dao.hibernate.SysLogDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 规则配置 -->	
+	<bean id="reportruleFromValidatorDAO" class="com.krm.ps.model.reportrule.dao.hibernate.FromValidatorDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="reportrulerReportConfigDAO" class="com.krm.ps.model.reportrule.dao.hibernate.ReportConfigDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	<bean id="reportrulerReportDefineDAO" class="com.krm.ps.model.reportrule.dao.hibernate.ReportDefineDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	<bean id="reportrulerRportRuledao" class="com.krm.ps.model.reportrule.dao.hibernate.ReportRuleDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	<!--规则配置结束-->	
+	<!--灵活查询-->	
+	<bean id="flexiblequeryDataFillDAO" class="com.krm.ps.model.flexiblequery.dao.hibernate.DataFillDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="flexiblequeryReportConfigDAO" class="com.krm.ps.model.flexiblequery.dao.hibernate.ReportConfigDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="flexiblequeryReportDefineDAO" class="com.krm.ps.model.flexiblequery.dao.hibernate.ReportDefineDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="flexiblequeryReportRuleDAO" class="com.krm.ps.model.flexiblequery.dao.hibernate.ReportRuleDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="flexiblequeryOrganInfoDAO" class="com.krm.ps.model.flexiblequery.dao.hibernate.OrganInfoDAOHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+   <!-- 灵活查询结束-->	
+	 <!--业务数据补录-->	
+    <bean id="datafillDataFillDAO" class="com.krm.ps.model.datafill.dao.hibernate.DataFillDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	<bean id="datafillFromValidatorDAO" class="com.krm.ps.model.datafill.dao.hibernate.FromValidatorDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	<bean id="datafillOrganInfoDAO" class="com.krm.ps.model.datafill.dao.hibernate.OrganInfoDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	<bean id="datafillReportConfigDAO" class="com.krm.ps.model.datafill.dao.hibernate.ReportConfigDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	<bean id="datafillReportDefineDAO" class="com.krm.ps.model.datafill.dao.hibernate.ReportDefineDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	<bean id="datafillReportRuleDAO" class="com.krm.ps.model.datafill.dao.hibernate.ReportRuleDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+   <!-- 业务数据补录结束 -->
+    <!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    
+    
+    <!-- ==============================chm===================================== -->
+    <!-- datavalidation start-->
+	<bean id="reportdao" class="com.krm.ps.model.datavalidation.dao.hibernate.ReportRuleDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>	
+	<!-- datavalidation end-->
+	
+	
+	<!-- reportdefine start -->
+	<bean id="currencyManagementDAO" class="com.krm.ps.model.reportdefine.dao.hibernate.CurrencyManagementDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>	
+	
+	<bean id="rddictionaryDAO" class="com.krm.ps.model.reportdefine.dao.hibernate.DictionaryDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>	
+	
+	<bean id="rdreportConfigDAO" class="com.krm.ps.model.reportdefine.dao.hibernate.ReportConfigDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	
+	<bean id="rdreportDefineDAO" class="com.krm.ps.model.reportdefine.dao.hibernate.ReportDefineDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	
+	<bean id="strdReporeWheconditionDAO" class="com.krm.ps.model.reportdefine.dao.hibernate.StrdReporeWheconditionDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	<!-- reportdefine end -->
+	
+	
+	<!-- repfile start -->
+	<bean id="repfileDao" class="com.krm.ps.model.repfile.dao.Hibernate.ReportFileDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	 
+	<bean id="rfreportdao" class="com.krm.ps.model.repfile.dao.Hibernate.ReportRuleDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	
+	<bean id="rfreportDefineDAO" class="com.krm.ps.model.reportdefine.dao.hibernate.ReportDefineDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+	
+	<bean id="dataFillDAO" class="com.krm.ps.model.repfile.dao.Hibernate.DataFillDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	
+	     <!-- <property name="formuladao" ref="formuladao"/>    -->  
+	</bean>
+	<!-- repfile end -->
+	
+	<!-- reportview start -->
+	<bean id="billExchangeDAO" class="com.krm.ps.model.reportview.dao.hibernate.BillExchangeDAOHibernate"> 
+		 <property name="dataSource" ref="dataSource"/>
+		<property name="reportDataDAO" ref="reportDataDAO"/>
+	</bean>
+	
+	<bean id="reportChartDAO" class="com.krm.ps.model.reportview.dao.hibernate.ReportChartDAOHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="logDAO" class="com.krm.ps.model.reportview.dao.hibernate.LogDAOHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="workFileDAO" class="com.krm.slsint.workfile.dao.Hibernate.WorkFileDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- workMailDAO: Hibernate implementation -->
+	<bean id="workMailDAO" class="com.krm.slsint.workfile.dao.Hibernate.WorkMailDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- message -->
+	<!-- FileRepository -->
+	<bean id="fileRepositoryDAO" class="com.krm.slsint.fileRepositoryManage.dao.hibernate.FileRepositoryDAOHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	
+	<!-- FileShareData -->
+	<bean id="fileShareDataDAO" class="com.krm.slsint.directorEnquiries.dao.hibernate.FileShareDataDAOHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- reportview end -->
+	
+    <!-- ==============================chm===================================== -->
+    
+       <bean id="queryDzDao" class="com.krm.ps.model.east1104dz.dao.hibernate.QueryDzDAOHibernate">
+	     <property name="sessionFactory" ref="sessionFactory"/>	     
+	</bean>
+ 	<bean id="workinstructionsDAO" class="com.krm.ps.model.workinstructions.dao.Hibernate.WorkinstructionsDAOHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+		<bean id="funconfigDao" class="com.krm.ps.model.funconfig.dao.hibernate.FunconfigDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="tskDao" class="com.krm.ps.tarsk.dao.impl.TarskDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="DAOJdbc" ref="DAOJdbc"/>
+	</bean>
+	<bean id="sbd" class="com.krm.ps.birt.dao.impl.ShowBirtDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+</beans>

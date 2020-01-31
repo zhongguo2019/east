@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.sysmanage.reportdefine.vo.TableField"
+        table="code_table_field"
+    >
+
+        <id
+            name="pkid"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">seq_code_table_field</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-TableField.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="fieldName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="fddescript"
+        />
+
+        <property
+            name="fieldNameStr"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="fdname"
+        />
+
+        <property
+            name="memo"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="memo"
+        />
+
+        <property
+            name="showorder"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="showorder"
+        />
+
+        <property
+            name="tableName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="tab_name"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-TableField.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.krm.ps.sysmanage.reportdefine.vo.ReportTarget" table="code_rep_target">
+
+		<id name="pkid" column="pkid" type="java.lang.Long">
+			<generator class="native">
+				<param name="sequence">code_rep_target_seq</param>
+				<!-- To add non XDoclet generator parameters, create a file named hibernate-generator-params-ReportTarget.xml 
+					containing the additional parameters and place it in your merge dir. -->
+			</generator>
+		</id>
+
+		<property name="dataType" type="java.lang.Integer" update="true"
+			insert="true" column="data_type" />
+
+		<property name="fieldType" type="java.lang.Integer" update="true"
+			insert="true" column="field_type" />
+				
+		<property name="editDate" type="java.lang.String" update="true"
+			insert="true" column="edit_date" />
+
+		<property name="targetField" type="java.lang.String" update="true"
+			insert="true" column="target_field" />
+
+		<property name="targetName" type="java.lang.String" update="true"
+			insert="true" column="target_name" />
+       <property name="outrule" type="java.lang.String" update="true"
+			insert="true" column="OUTRULE" />
+			<property name="rulesize" type="java.lang.String" update="true"
+			insert="true" column="RULESIZE" />
+		<property name="targetOrder" type="java.lang.Integer" update="true"
+			insert="true" column="target_order" />
+
+		<property name="endDate" type="java.lang.String" update="true"
+			insert="true" column="end_date" />
+	<property name="stocktype" type="java.lang.String" update="true"
+			insert="true" column="stock_type" />
+		<property name="beginDate" type="java.lang.String" update="true"
+			insert="true" column="begin_date" />
+
+		<property name="createDate" type="java.lang.String" update="true"
+			insert="true" column="create_date" />
+
+		<property name="reportId" type="java.lang.Long" update="true"
+			insert="true" column="report_id" />
+
+		<property name="status" type="java.lang.Integer" update="true"
+			insert="true" column="status" />
+
+		<property name="dicPid" type="java.lang.Long" update="true"
+			insert="true" column="dic_pid" />
+		<!-- To add non XDoclet property mappings, create a file named hibernate-properties-ReportTarget.xml 
+			containing the additional properties and place it in your merge dir. -->
+
+	</class>
+
+</hibernate-mapping>

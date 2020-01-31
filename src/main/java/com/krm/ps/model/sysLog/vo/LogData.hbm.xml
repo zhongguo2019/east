@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.krm.ps.model.sysLog.vo.LogData"
+        table="log_data_01"
+    >
+
+        <id
+            name="pkId"
+            column="pkid"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+                <param name="sequence">log_data_pkid_seq</param>
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-LogData.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="dataDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="date_data"
+        />
+
+        <property
+            name="logType"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="mk_type"
+        />
+
+        <property
+            name="memo"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="ass_memo"
+        />
+
+        <property
+            name="organId"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="cd_organ"
+        />
+
+        <property
+            name="organName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="nm_organ"
+        />
+
+        <property
+            name="recordDate"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="date_rec"
+        />
+
+        <property
+            name="reportId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="id_rep"
+        />
+
+        <property
+            name="reportName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="nm_rep"
+        />
+
+        <property
+            name="reportType"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="id_rep_type"
+        />
+
+        <property
+            name="reportTypeName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="nm_rep_type"
+        />
+
+        <property
+            name="userId"
+            type="java.lang.Long"
+            update="true"
+            insert="true"
+            column="id_oper"
+        />
+
+        <property
+            name="userName"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="nm_oper"
+        />
+        <property
+            name="status"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-LogData.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

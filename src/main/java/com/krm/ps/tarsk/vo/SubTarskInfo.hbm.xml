@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.krm.ps.tarsk.vo.SubTarskInfo" table="sub_tarsk_info">
+
+		<id name="pkid" column="pkid" type="java.lang.Long">
+			<generator class="native">
+				<param name="sequence">sub_tarsk_info_seq</param>
+				<!-- To add non XDoclet generator parameters, create a file named hibernate-generator-params-ReportTarget.xml 
+					containing the additional parameters and place it in your merge dir. -->
+			</generator>
+		</id>
+<property name="tId" type="java.lang.Long" update="true" insert="true" column="TID" />
+		<property name="createTime" type="java.lang.String" update="true"
+			insert="true" column="create_time" />
+
+		<property name="startTime" type="java.lang.String" update="true"
+			insert="true" column="start_time" />
+				
+		<property name="endTime" type="java.lang.String" update="true"
+			insert="true" column="end_time" />
+
+		<property name="status" type="java.lang.String" update="true"
+			insert="true" column="status" />
+
+		<property name="type" type="java.lang.String" update="true"
+			insert="true" column="type" />
+
+		<property name="message" type="java.lang.String" update="true"
+			insert="true" column="message" />
+
+		 <property name="reportId" type="java.lang.String" update="true"
+			insert="true" column="en_reportId" />
+
+		<property name="organId" type="java.lang.String" update="true"
+			insert="true" column="en_organId" />
+
+		<property name="dataDate" type="java.lang.String" update="true"
+			insert="true" column="en_dataDate" />
+		<property name="tCount" type="java.lang.Integer" update="true"
+			insert="true" column="t_count" />
+	<property name="filePath" type="java.lang.String" update="true"
+			insert="true" column="file_path" />
+	</class>
+
+</hibernate-mapping>
