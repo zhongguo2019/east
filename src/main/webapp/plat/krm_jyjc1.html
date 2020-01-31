@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="ty.css" rel="stylesheet" type="text/css" />
+<link href="krm_jyjc.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="jyjc_top">
+  <div class="jyjc_top2">
+    <div class="jyjc_top3">
+    <div class="jyjc_top_r"><img src="images-jyjc/jyjc_g03.gif" width="201" height="31" border="0" usemap="#Map" />
+      <map name="Map" id="Map">
+        <area shape="rect" coords="32,8,49,23" href="#"  alt="导出表格"/>
+        <area shape="rect" coords="72,6,92,25" href="#" alt="打印预览"/>
+        <area shape="rect" coords="112,5,129,23" href="#"alt="全屏" />
+        <area shape="rect" coords="149,5,171,24" href="#" alt="退出" />
+      </map>
+    </div>
+    <div class="jyjc_top_r2">日期：
+      <label>
+        <input name="textfield" type="text" id="textfield" size="12" />
+      </label>
+    &nbsp;&nbsp;机构：<input type="image" src="images-jyjc/jyjc_g04.gif" width="49" height="21" /><input name="" type="text" />&nbsp;&nbsp;金额单位：<select name="">
+      <option>万</option>
+    </select>&nbsp;&nbsp;<input type="image" src="images-jyjc/jyjc_g05.gif" width="67" height="21" /></div>
+    <div class="jyjc_top_logo"></div>
+    
+  </div>
+</div></div>
+<div class="line2"></div>
+<div class="jyjc_sj">
+  <p>此处显示你们原来的内容，右侧数据尽量能够自适应宽度，不要留灰底</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<div class="jyjc_foot"></div>
+<div id="divReport">
+			<table width="100%" border="0" cellspacing="0">
+				<tr>
+					<c:set var="GRHeight" value="430" /><c:if test="${showret == 'no'}"><c:set var="GRHeight" value="520" /></c:if>
+					<td><object id="GoldReport1" height="<c:out value='${GRHeight}'/>" width="100%"
+						classid="clsid:D198BA37-8E16-4590-8311-46C58A1790B4"
+						CODEBASE="<c:url value="common/GoldReport/"/><c:out value="${goldReportNamenVervion}"/>">
+					</object></td>
+				</tr>
+			</table>
+			</div>
+			<div class="jyjc_foot"></div>
+</body>
+</html>
