@@ -1,0 +1,69 @@
+[{
+	"id":1,
+	"text":"asd",
+	"children":[{
+		"id":11,
+		"text":"asd",
+		"state":"closed",
+		"children":[{
+			"id":111,
+			"text":"Friend1",
+			"state":"closed",
+			"children":[{
+			"id":1111,
+			"text":"Friend",
+			"children":[{
+			"id":1111,
+			"text":"Friend"
+			}]
+			}]
+
+
+		},{
+			"id":112,
+			"text":"Wife",
+			"state":"closed",
+			"children":[{
+			"id":1111,
+			"text":"Friend",
+			"children":[{
+			"id":1111,
+			"text":"Friend"
+			}]
+			}]
+		},{
+			"id":113,
+			"text":"Company"
+		}]
+	},{
+		"id":12,
+		"text":"Program Files",
+		"children":[{
+			"id":121,
+			"text":"Intel"
+		},{
+			"id":122,
+			"text":"Java",
+			"attributes":{
+				"p1":"Custom Attribute1",
+				"p2":"Custom Attribute2"
+			}
+		},{
+			"id":123,
+			"text":"Microsoft Office"
+		},{
+			"id":124,
+			"text":"Games",
+			"checked":true
+		}]
+	},{
+		"id":13,
+		"text":"index.html"
+	},{
+		"id":14,
+		"text":"about.html"
+	},{
+		"id":15,
+		"text":"welcome.html"
+	}]
+}]

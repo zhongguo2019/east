@@ -1,0 +1,84 @@
+[   
+    {
+        "oscode": "east",
+        "osname": "east",
+        "host": "127.0.0.1",
+        "port": "8080",
+        "context":"east",
+        "loginurl":"loginAction.do?method=login&mycas=yes",
+        "param_name": "logonname",
+        "param_pass": "password",
+        "param_logdate": "logindate",
+        "isuser": true,
+        "plat": true,
+        "icon":"images/icons_east.png",
+        "default": true
+    },
+    {
+      	"oscode": "jgbs",
+        "osname": "jsbs",
+        "host": "192.168.0.177",
+        "port": "7001",
+        "context":"jgbs",
+        "loginurl":"loginAction.do?method=login&mycas=yes",
+        "logouturl":"loginAction.do?method=loginout",
+        "param_name": "logonname",
+        "param_pass": "password",
+        "param_logdate": "logindate",
+        "isuser": true,
+        "plat": true,
+        "icon":"images/icons_jgbs.png",
+        "default": true
+    },
+    {
+      	"oscode": "slscui",
+        "osname": "slscui",
+        "host": "192.168.0.177",
+        "port": "7001",
+        "context":"slscui",
+        "loginurl":"loginAction.do?method=login&mycas=yes",
+        "logouturl":"loginAction.do?method=loginout",
+        "param_name": "logonname",
+        "param_pass": "password",
+        "param_logdate": "logindate",
+        "isuser": true,
+        "plat": true,
+        "icon":"images/icons_slscui.png",
+        "default": true
+    },
+    {
+      	"oscode": "slsint",
+        "osname": "slsint",
+        "host": "192.168.0.177",
+        "port": "7001",
+        "context":"slsint",
+        "loginurl":"loginAction.do?method=login&mycas=yes",
+        "logouturl":"loginAction.do?method=loginout",
+        "param_name": "logonname",
+        "param_pass": "password",
+        "param_logdate": "logindate",
+        "isuser": true,
+        "plat": true,
+        "icon":"images/icons_slsint.png",
+        "default": true
+    },
+    {
+      	"oscode": "platsso",
+        "osname": "platsso",
+        "host": "192.168.0.177",
+        "port": "7001",
+        "context":"platsso",
+        "loginurl":"/platlogin.shtml?method=manage",
+        "logouturl":"loginAction.do?method=loginout",
+        "param_name": "logonname",
+        "param_pass": "password",
+        "param_logdate": "logindate",
+        "isuser": true,
+        "plat": true,
+        "icon":"images/icons_platsso.png",
+        "default": true
+    }
+    
+    
+    
+]

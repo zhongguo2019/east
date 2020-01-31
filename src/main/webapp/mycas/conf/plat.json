@@ -1,0 +1,15 @@
+[
+	{	
+		"oscode": "platsso",
+		"osname": "platsso",
+		"host": "127.0.0.1",
+		"port": "8080",
+		"context":"/platsso",
+		"logingurl":"platlogin.shtml?method=getUserExistByAsync",
+		"param_name": "logonname",
+		"param_pass": "user_password",
+		"param_logdate": "logdate",
+		"isuser": true,
+		"plat": true
+	}
+]
