@@ -1,0 +1,124 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" media="all"
+	href="/slsint/styles/common.css" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="/slsint/common/jscalendar/calendar-win2k-1.css"
+	title="win2k-cold-1" />
+<script type="text/javascript" src="/slsint/scripts/global.js"></script>
+<script type="text/javascript"
+	src="/slsint/common/jscalendar/calendar.js"></script>
+<script type="text/javascript"
+	src="/slsint/common/jscalendar/lang/zh-cn.js"></script>
+<script type="text/javascript"
+	src="/slsint/common/jscalendar/calendar-setup.js"></script>
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+<form action="" method="post" name="workFileForm">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+   <tr>
+      <td colspan="2">
+      <table>
+         <tr>
+            <td width="150" class="TdBgColor1" align="center">指引分类:</td>
+            <td class="TdBgColor2"><select name="kind" style="width:240;">
+                                    
+									<option value="10061" >房产贷款</option>
+									
+									<option value="10062" >汽车贷款</option>
+									
+									<option value="1" >政策法规</option>
+									
+									<option value="2" >通知</option>
+									                                   
+                                   </select></td>
+            <td whidth="150" class="TdBgColor1" align="center">出处:</td>
+            <td class="TdBgColor2"><select name="fileSource" style="width:240;">
+                                   
+								   <option value="1" >人大</option>
+								   
+								   <option value="2" >国务院</option>
+								    
+                                   </select></td>
+            <td width="150" class="TdBgColor1" align="center"><fmg:message key="workFile.issData"/></td>
+            <td class="TdBgColor2"><input type="text" name="issData" size="8" style="width:240;" readonly="true" value="" /></td>
+         </tr>
+         <script type="text/javascript">
+         
+				Calendar.setup({
+					inputField     :    "issData",  
+					ifFormat       :    "%Y%m%d",   
+					showsTime      :    false
+				});
+			</script>
+      </table>
+      </td>
+   </tr>
+   <tr>
+      <td width="150" class="TdBgColor1" align="center">标题:</td>
+      <td class="TdBgColor2"><input type="text" name="title" size="40" value=""/></td>
+   </tr>
+   <tr>
+       <td width="150" class="TdBgColor1" align="center">正文:</td>
+       <td>
+<script language="Javascript1.2">
+<!-- 
+// load htmlarea
+_editor_url = "WYSIWYG/";                     
+// URL to htmlarea files
+var win_ie_ver = parseFloat(navigator.appVersion.split("MSIE")[1]);
+if (navigator.userAgent.indexOf('Mac')        >= 0) { win_ie_ver = 0; }
+if (navigator.userAgent.indexOf('Windows CE') >= 0) { win_ie_ver = 0; }
+if (navigator.userAgent.indexOf('Opera')      >= 0) { win_ie_ver = 0; }
+if (win_ie_ver >= 5.5) {
+  document.write('<scr' + 'ipt src="' +_editor_url+ 'editor.js"');
+  document.write(' language="Javascript1.2"></scr' + 'ipt>');  
+} else { document.write('<scr'+'ipt>function editor_generate() { return false; }</scr'+'ipt>'); }
+// -->
+</script>
+
+<textarea name="x" style="width:800; height:150" id="x">
+gjkhjgjhg
+</textarea>
+
+</td>
+   </tr>
+   <tr>
+      <td>
+       <input type="file" name="file" size="50"  />
+      </td>
+   </tr>
+   <tr>
+      <td colspan="2" align="center"><input type="submit" name="submit" value="确定" /></td>
+   </tr>
+</table>
+</form>
+</body>
+</html>
+<script language="javascript1.2">
+editor_generate('x');
+</script>
+
