@@ -1,0 +1,38 @@
+.sec2 { 
+  background-color: #fff;
+  cursor: hand;
+  color: #000000;
+  border-left: 1px solid #99c5ee;
+  border-top: 1px solid #99c5ee;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid #fff;
+  font-weight: bold; 
+  
+  /* background-image: url(../images/images/z_05.jpg);*/
+  }
+.sec1 { 
+  /**background-color: #D4D0C8;**/
+  cursor: hand;
+  color: #000000;
+  border-left: 0px solid #99c5ee; 
+  border-top: 0px solid #99c5ee; 
+  border-right: 0px solid #99c5ee; 
+   border-bottom: 2px solid #99c5ee;
+   
+  
+  
+  /**background-image: url(../../images/dt_bg_right.png);**/
+  }
+  
+  .sec3 { 
+ 
+   border-bottom: 2px solid #99c5ee;
+
+  }
+.main_tab {
+  /**background-color: #D4D0C8;**/
+  color: #000000;
+  border-left:1px solid #FFFFFF;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid gray; 
+  }

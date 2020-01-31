@@ -1,0 +1,121 @@
+BODY
+{
+  	COLOR: #FFFFFF;
+  	FONT-FAMILY: '����宋体';
+  	FONT-SIZE:12px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+td
+{
+	font-family: "����宋体", "����黑体";
+	font-size: 9pt;
+	color: #000000;
+}
+.TableBgColor
+{
+	BACKGROUND-COLOR: #CDCDCD;
+}
+.TdBgColor1
+{
+	BACKGROUND-COLOR: #efefef;
+}
+.TdBgColor2
+{
+	BACKGROUND-COLOR: #f8f8f8;
+}
+.Title
+{
+	BACKGROUND-COLOR: #E9F2F9;
+	FONT-SIZE: 12pt;
+	COLOR: #535250
+}
+.FormBottom
+{
+	BACKGROUND-COLOR: #E9F2F9;
+}
+.BtnBgColor
+{
+	BACKGROUND-COLOR: #fdfdfd;
+}
+.Btn
+{
+	font-size: 12px;
+	color: #000033;
+	background-color: #D4D0C8;
+	border: 1px ridge #000000;
+	text-align: center;
+	margin-bottom: 1px;
+	padding-bottom: 1px;
+	width: auto;
+	cursor:hand;
+}
+.SelectList
+{
+}
+
+A:visited {
+	TEXT-DECORATION: none
+}
+A:link {
+	TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+a.OperLink:link {
+	color: #0000a0;
+	text-decoration: none;
+}
+
+a.OperLink:visited {
+	color: #0000a0;
+	text-decoration: none;
+}
+
+a.OperLink:hover {
+	color: #ff0000;
+	text-decoration: underline;
+}
+
+a.OperLink:active {
+	color: #000000;
+	text-decoration: none;
+}
+.button {
+	font-size: 12px;
+	color: #000033;
+	background-color: #D4D0C8;
+	border: 1px ridge #000000;
+	text-align: center;
+	margin-bottom: 1px;
+	padding-bottom: 1px;
+	clip:  rect(auto auto 0px auto);
+	width: auto;
+	cursor:hand;
+}
+/* highlight table row onmouseover */
+.over {
+	background: #FFFF40;
+	border-bottom: 1px solid #C0C0C0;
+	border-top: 1px solid #C0C0C0;
+	color: #000000;
+}
+.tableborder {
+	border: 0px solid #A3C5CF;
+	BORDER-RIGHT: 0px solid white;
+	empty-cells: show;
+	BACKGROUND-COLOR: #efefef;
+}
+
+.tdborder {
+	BACKGROUND-COLOR: #efefef;
+	border: 1px solid white;
+	BORDER-RIGHT: 1px solid white;
+	BORDER-TOP: 0px solid white;
+	BORDER-LEFT: silver 0px outset;
+	BORDER-BOTTOM: 1px solid white;
+	empty-cells: show;
+}

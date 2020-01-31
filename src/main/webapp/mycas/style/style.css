@@ -1,0 +1,119 @@
+* {
+	margin:0; padding:0;
+}
+html{height:100%;}
+body {
+ height:100%;
+ background:#fff url('') left top repeat-x;
+ font-family:Tahoma, Arial, sans-serif;
+ overflow:auto;
+}
+
+img {
+	border:0;
+}
+
+#container {
+	width:100%;
+	margin:0 auto;
+	position:fixed; 
+}
+
+#container .logo {
+	width:230px;
+	margin:240px auto 0;
+}
+
+#container #box {
+ clear:both;
+ float:none;
+ width:100%;
+ margin:0px auto 0;
+}
+
+p.main label {
+ float:left;
+ padding:5px;
+ display:inline;
+ margin-left:40px;
+ font-size:12px;
+ color:#000;
+ margin-right:10px;
+}
+
+#box p {
+ clear:both;
+ float:none;
+ width:100%;
+}
+.inputclass{
+ background:url('../images/input.png') 0 0 repeat-x;
+ border:1px solid #d3d3d3;
+ color:#555;
+ padding:5px;
+ float:left;
+ width:200px;
+}
+
+
+
+span {
+ font-size:12px;
+ color:#666;
+}
+
+.space {
+ padding-top:15px;
+}
+
+span input {
+ margin-left:125px;
+ margin-right:5px;
+ border:1px solid #111;
+ background:#444;
+ color:#fff;
+}
+		
+#nav-shadow {
+	margin: 0px auto 0px auto;
+	width: 60%;
+	min-height: 130px;
+	text-align: center;
+	background:white,
+	list-style: none;
+}
+#nav-shadow li {
+	margin: 5px;
+	width: 182px;
+	height: 207px;
+	/*position: relative;*/
+	float: left;
+	border: 1px dashed #ffffff;
+}
+#nav-shadow li:hover {
+	
+	border: 1px solid #CAE1FF;
+}
+#nav-shadow a, #nav-shadow a:visited, #nav-shadow a, #nav-shadow a:hover {
+	margin: 0 auto;
+	width: 182px;
+	height: 207px;
+	text-indent: -9999px;
+	overflow: hidden;
+	/*background: url() no-repeat;*/
+	display: block;
+	position: relative;
+	color:#000000
+}
+/* Button Colors */
+		
+
+/* Button Shadow */
+		
+	#nav-shadow li img.shadow {
+	margin: 0 auto;
+	
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+}

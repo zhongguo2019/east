@@ -1,0 +1,147 @@
+* {
+	margin:0; padding:0;
+}
+html{height:100%;}
+body {
+ position:relative;
+ height:100%;
+ background:#fff url('') left top repeat-x;
+ font-family:Tahoma, Arial, sans-serif;
+ overflow:auto;
+}
+
+img {
+	border:0;
+}
+
+#container {
+	width:100%;
+	margin:0 auto;
+	position:fixed; 
+}
+
+#container .logo {
+	width:230px;
+	margin:240px auto 0;
+}
+
+#container #box {
+ clear:both;
+ float:none;
+ width:100%;
+ margin:0px auto 0;
+}
+
+p.main label {
+ float:left;
+ padding:5px;
+ display:inline;
+ margin-left:40px;
+ font-size:12px;
+ color:#000;
+ margin-right:10px;
+}
+
+#box p {
+ clear:both;
+ float:none;
+ width:100%;
+}
+.inputclass{
+ background:url('../images/input.png') 0 0 repeat-x;
+ border:1px solid #d3d3d3;
+ color:#555;
+ padding:5px;
+ float:left;
+ width:200px;
+}
+
+
+
+span {
+ font-size:12px;
+ color:#666;
+}
+
+.space {
+ padding-top:15px;
+}
+
+span input {
+ margin-left:125px;
+ margin-right:5px;
+ border:1px solid #111;
+ background:#444;
+ color:#fff;
+}
+		
+#nav-shadow {
+	margin: 0px auto 0px auto;
+	padding: 0px 0 0 0px;
+	width: 60%;
+	min-height: 130px;
+	text-align: center;
+	background:white,
+	list-style: none;
+}
+#nav-shadow li {
+	margin-right: 0px;
+	width: 182px;
+	height: 207px;
+	/*position: relative;*/
+	float: left;
+	border: 1px dashed #CAE1FF;
+}
+#nav-shadow a, #nav-shadow a:visited, #nav-shadow a, #nav-shadow a:hover {
+	margin: 0 auto;
+	width: 182px;
+	height: 207px;
+	text-indent: -9999px;
+	overflow: hidden;
+	/*background: url() no-repeat;*/
+	display: block;
+	position: relative;
+	z-index: 2;
+}
+/* Button Colors */
+		
+#nav-shadow li.button-color-east a {
+	/*background-position: -3px -3px;*/
+	/*background: url(../images/icons_east.png) no-repeat;*/
+}
+#nav-shadow li.button-color-2 a {
+	/*background-position: -92px -3px;*/
+}
+#nav-shadow li.button-color-3 a {
+	/*background-position: -181px -3px;*/
+}
+#nav-shadow li.button-color-4 a {
+	/*background-position: -270px -3px;*/
+}
+#nav-shadow li.button-color-5 a {
+	/*background-position: -270px -3px;*/
+}
+#nav-shadow li.button-color-6 a {
+	background-position: -270px -3px;
+}
+#nav-shadow li.button-color-7 a {
+	background-position: -270px -3px;
+}
+#nav-shadow li.button-color-8 a {
+	background-position: -270px -3px;
+}
+#nav-shadow li.button-color-9 a {
+	background-position: -270px -3px;
+}
+#nav-shadow li.button-color-10 a {
+	background-position: -270px -3px;
+}
+/* Button Shadow */
+		
+	#nav-shadow li img.shadow {
+	margin: 0 auto;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+}
