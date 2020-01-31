@@ -1,0 +1,5 @@
+http://192.168.0.177:7001/east/loginAction.do?method=logout
+http://192.168.0.177:7001/jgbs/loginAction.do?method=logout
+http://192.168.0.177:7001/pisa/loginAction.do?method=logout
+http://192.168.0.177:7001/slscui/loginAction.do?method=logout
+http://192.168.0.177:7001/slsint/loginAction.do?method=logout
